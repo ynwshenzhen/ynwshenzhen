@@ -62,12 +62,8 @@ body::before{
 .s5{top:90%;left:12%;animation-delay:1.5s}
 
 @keyframes float{
-    0%,100%{
-        transform:rotate(0deg) scale(1)
-    }
-    50%{
-        transform:rotate(15deg) scale(1.3)
-    }
+    0%,100%{transform:rotate(0deg) scale(1)}
+    50%{transform:rotate(15deg) scale(1.3)}
 }
 
 /* MAIN */
@@ -79,24 +75,19 @@ body::before{
     z-index:2;
 }
 
-/* BROWSER BAR */
+/* TOP BAR */
 
 .browserbar{
     height:30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:0 10px;
-
     background:linear-gradient(#777,#222);
-
     border:1px solid #999;
-
     color:#ddd;
     font-size:10px;
     font-family:monospace;
-
     box-shadow:0 3px 8px #000;
 }
 
@@ -104,13 +95,9 @@ body::before{
 
 header{
     margin-top:3px;
-
-    min-height:330px;
-
+    min-height:390px;
     position:relative;
-
-    padding:45px 30px;
-
+    padding:55px 30px 35px;
     overflow:hidden;
 
     border:1px solid #777;
@@ -130,15 +117,11 @@ header{
 
 header::before{
     content:"";
-
     position:absolute;
-
     width:500px;
     height:500px;
-
     left:50%;
     top:50%;
-
     transform:translate(-50%,-50%);
 
     background:radial-gradient(
@@ -150,8 +133,11 @@ header::before{
     pointer-events:none;
 }
 
+/* LOGO */
+
 .logo{
     position:relative;
+    z-index:5;
 
     text-align:center;
 
@@ -175,6 +161,7 @@ header::before{
 
 .tagline{
     position:relative;
+    z-index:5;
 
     margin-top:10px;
 
@@ -194,10 +181,299 @@ header::before{
     text-decoration:underline;
 }
 
+/* CARTOON DUDES */
+
+.dude{
+    position:absolute;
+    z-index:4;
+
+    width:115px;
+    height:190px;
+
+    animation:bob 3s ease-in-out infinite;
+}
+
+.dude.left{
+    left:35px;
+    bottom:45px;
+    transform:rotate(-7deg);
+}
+
+.dude.right{
+    right:35px;
+    bottom:45px;
+    transform:rotate(7deg);
+    animation-delay:1.2s;
+}
+
+@keyframes bob{
+    0%,100%{
+        margin-top:0;
+    }
+
+    50%{
+        margin-top:-10px;
+    }
+}
+
+/* HEAD */
+
+.head{
+    position:absolute;
+
+    width:72px;
+    height:72px;
+
+    left:22px;
+    top:8px;
+
+    border-radius:48% 52% 45% 55%;
+
+    background:#c98d62;
+
+    border:3px solid #111;
+
+    box-shadow:
+        5px 5px #000;
+}
+
+/* HAIR */
+
+.hair{
+    position:absolute;
+
+    width:75px;
+    height:28px;
+
+    left:-3px;
+    top:-8px;
+
+    background:#111;
+
+    border-radius:60% 45% 20% 30%;
+
+    transform:rotate(-4deg);
+
+    border:3px solid #111;
+}
+
+/* FACE */
+
+.eye{
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    background:#111;
+
+    border-radius:50%;
+
+    top:34px;
+}
+
+.eye.one{
+    left:20px;
+}
+
+.eye.two{
+    right:20px;
+}
+
+.mouth{
+    position:absolute;
+
+    width:25px;
+    height:10px;
+
+    left:22px;
+    top:50px;
+
+    border-bottom:3px solid #111;
+
+    border-radius:50%;
+}
+
+/* GLASSES */
+
+.glasses{
+    position:absolute;
+
+    width:62px;
+    height:20px;
+
+    left:5px;
+    top:27px;
+
+    display:flex;
+    gap:3px;
+}
+
+.glass{
+    width:29px;
+    height:17px;
+
+    border:3px solid #111;
+
+    background:#555;
+
+    opacity:.95;
+}
+
+/* BODY */
+
+.body{
+    position:absolute;
+
+    width:82px;
+    height:90px;
+
+    left:16px;
+    top:77px;
+
+    background:#222;
+
+    border:3px solid #111;
+
+    border-radius:20px 20px 10px 10px;
+
+    box-shadow:5px 5px #000;
+}
+
+.body::after{
+    content:"★";
+
+    position:absolute;
+
+    left:27px;
+    top:25px;
+
+    color:#fff;
+
+    font-size:25px;
+}
+
+/* ARMS */
+
+.arm{
+    position:absolute;
+
+    width:62px;
+    height:15px;
+
+    background:#c98d62;
+
+    border:3px solid #111;
+
+    border-radius:20px;
+}
+
+.arm.left-arm{
+    left:-27px;
+    top:93px;
+    transform:rotate(30deg);
+}
+
+.arm.right-arm{
+    right:-27px;
+    top:103px;
+    transform:rotate(-45deg);
+}
+
+/* HAND */
+
+.hand{
+    position:absolute;
+
+    width:25px;
+    height:25px;
+
+    background:#c98d62;
+
+    border:3px solid #111;
+
+    border-radius:50%;
+}
+
+.hand.left-hand{
+    left:-48px;
+    top:119px;
+}
+
+.hand.right-hand{
+    right:-46px;
+    top:115px;
+}
+
+/* LEGS */
+
+.leg{
+    position:absolute;
+
+    width:22px;
+    height:60px;
+
+    background:#222;
+
+    border:3px solid #111;
+
+    top:158px;
+}
+
+.leg.left-leg{
+    left:30px;
+    transform:rotate(9deg);
+}
+
+.leg.right-leg{
+    right:30px;
+    transform:rotate(-9deg);
+}
+
+/* SHOES */
+
+.shoe{
+    position:absolute;
+
+    width:45px;
+    height:20px;
+
+    background:#eee;
+
+    border:3px solid #111;
+
+    border-radius:50%;
+
+    top:202px;
+}
+
+.shoe.left-shoe{
+    left:10px;
+}
+
+.shoe.right-shoe{
+    right:10px;
+}
+
+/* SECOND DUDE DIFFERENCE */
+
+.dude.right .body{
+    background:#555;
+}
+
+.dude.right .hair{
+    background:#ddd;
+}
+
+.dude.right .head{
+    background:#9b6b4d;
+}
+
 /* NAV */
 
 nav{
     position:relative;
+    z-index:10;
 
     margin-top:30px;
 
@@ -211,15 +487,12 @@ nav a{
     padding:10px 22px;
 
     color:#fff;
-
     text-decoration:none;
-
     text-transform:uppercase;
 
     font-family:Anton,sans-serif;
 
     font-size:13px;
-
     letter-spacing:1px;
 
     background:linear-gradient(
@@ -257,7 +530,6 @@ nav a:hover{
     padding:7px;
 
     overflow:hidden;
-
     white-space:nowrap;
 
     background:#000;
@@ -273,18 +545,12 @@ nav a:hover{
 
 .ticker span{
     display:inline-block;
-
     animation:scroll 18s linear infinite;
 }
 
 @keyframes scroll{
-    from{
-        transform:translateX(100%)
-    }
-
-    to{
-        transform:translateX(-100%)
-    }
+    from{transform:translateX(100%)}
+    to{transform:translateX(-100%)}
 }
 
 /* INTRO */
@@ -341,8 +607,7 @@ nav a:hover{
 
     line-height:.95;
 
-    text-shadow:
-        4px 4px #000;
+    text-shadow:4px 4px #000;
 }
 
 .intro h1 span{
@@ -374,7 +639,6 @@ nav a:hover{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     position:relative;
@@ -406,8 +670,7 @@ nav a:hover{
             #111 65%
         );
 
-    box-shadow:
-        0 0 60px #555;
+    box-shadow:0 0 60px #555;
 }
 
 .photo-text{
@@ -421,8 +684,7 @@ nav a:hover{
 
     transform:rotate(-5deg);
 
-    text-shadow:
-        3px 3px #000;
+    text-shadow:3px 3px #000;
 }
 
 /* SECTIONS */
@@ -503,7 +765,6 @@ section{
     height:60px;
 
     display:grid;
-
     place-items:center;
 
     flex-shrink:0;
@@ -523,12 +784,12 @@ section{
 
     text-shadow:2px 2px #000;
 
-    box-shadow:
-        3px 3px #000;
+    box-shadow:3px 3px #000;
 }
 
 .beat-info{
     flex:1;
+    min-width:0;
 }
 
 .beat-info strong{
@@ -541,8 +802,6 @@ section{
     font-size:16px;
 
     line-height:1.15;
-
-    letter-spacing:.3px;
 }
 
 .beat-info small{
@@ -573,47 +832,180 @@ section{
 
     font-weight:bold;
 
+    flex-shrink:0;
+
     box-shadow:
         inset 0 1px white,
         2px 2px #000;
 }
 
-.play:hover{
+.play:hover,
+.play.active{
     background:linear-gradient(#fff,#777,#222);
+    color:#000;
+}
+
+/* PLAYER */
+
+.player{
+    margin-top:10px;
+
+    padding:20px;
+
+    border:1px solid #888;
+
+    background:
+        linear-gradient(
+            #444,
+            #111 50%,
+            #222
+        );
+
+    box-shadow:
+        inset 0 1px #aaa,
+        0 6px 20px #000;
+}
+
+.player-top{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.disc{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ddd 0 7%,
+            #222 8% 15%,
+            #aaa 16% 17%,
+            #111 18% 100%
+        );
+
+    border:2px solid #aaa;
+
+    color:white;
+
+    font-size:25px;
+
+    box-shadow:0 0 20px #000;
+}
+
+.disc.spin{
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+.player-info{
+    flex:1;
+    min-width:0;
+}
+
+.player-info strong{
+    display:block;
+
+    font-family:Anton,sans-serif;
+
+    font-size:22px;
+
+    text-transform:uppercase;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+}
+
+.player-info small{
+    color:#888;
+
+    font-family:monospace;
+}
+
+.controls{
+    display:flex;
+    gap:5px;
+}
+
+.control{
+    width:35px;
+    height:30px;
+
+    background:linear-gradient(#888,#222);
+
+    color:#fff;
+
+    border:1px solid #aaa;
+
+    cursor:pointer;
+}
+
+.control:hover{
+    background:linear-gradient(#fff,#555);
 
     color:#000;
 }
 
-/* PLAYER PLACEHOLDER */
+.progress-row{
+    display:flex;
 
-.player-placeholder{
-    margin-top:10px;
+    align-items:center;
 
-    padding:35px;
+    gap:8px;
 
-    text-align:center;
+    margin-top:18px;
+}
 
-    border:1px dashed #555;
+.time{
+    width:35px;
 
-    background:#0b0b0b;
-
-    color:#666;
+    color:#999;
 
     font-family:monospace;
 
-    font-size:11px;
+    font-size:9px;
+
+    text-align:center;
 }
 
-.player-placeholder strong{
-    display:block;
+.progress{
+    flex:1;
 
-    color:#aaa;
+    height:8px;
 
-    font-family:Anton,sans-serif;
+    background:#050505;
 
-    font-size:25px;
+    border:1px solid #777;
 
-    margin-bottom:8px;
+    cursor:pointer;
+}
+
+.progress-fill{
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #555,
+        #fff
+    );
 }
 
 /* SOCIALS */
@@ -747,6 +1139,23 @@ footer strong{
     .logo{
         font-size:65px;
     }
+
+    .dude{
+        transform:scale(.65);
+    }
+
+    .dude.left{
+        left:-15px;
+    }
+
+    .dude.right{
+        right:-15px;
+    }
+
+    .player-top{
+        flex-wrap:wrap;
+    }
+
 }
 
 </style>
@@ -754,7 +1163,6 @@ footer strong{
 
 
 <body>
-
 
 <div class="star s1">✦</div>
 <div class="star s2">★</div>
@@ -766,17 +1174,88 @@ footer strong{
 <div class="wrapper">
 
 
-<!-- TOP BAR -->
-
 <div class="browserbar">
     <span>ynwshenzhen.com</span>
     <span>★ 2010 internet energy ★</span>
 </div>
 
 
-<!-- HEADER -->
-
 <header id="home">
+
+
+    <!-- LEFT CARTOON -->
+
+    <div class="dude left">
+
+        <div class="head">
+
+            <div class="hair"></div>
+
+            <div class="eye one"></div>
+            <div class="eye two"></div>
+
+            <div class="mouth"></div>
+
+            <div class="glasses">
+                <div class="glass"></div>
+                <div class="glass"></div>
+            </div>
+
+        </div>
+
+        <div class="body"></div>
+
+        <div class="arm left-arm"></div>
+        <div class="arm right-arm"></div>
+
+        <div class="hand left-hand"></div>
+        <div class="hand right-hand"></div>
+
+        <div class="leg left-leg"></div>
+        <div class="leg right-leg"></div>
+
+        <div class="shoe left-shoe"></div>
+        <div class="shoe right-shoe"></div>
+
+    </div>
+
+
+    <!-- RIGHT CARTOON -->
+
+    <div class="dude right">
+
+        <div class="head">
+
+            <div class="hair"></div>
+
+            <div class="eye one"></div>
+            <div class="eye two"></div>
+
+            <div class="mouth"></div>
+
+            <div class="glasses">
+                <div class="glass"></div>
+                <div class="glass"></div>
+            </div>
+
+        </div>
+
+        <div class="body"></div>
+
+        <div class="arm left-arm"></div>
+        <div class="arm right-arm"></div>
+
+        <div class="hand left-hand"></div>
+        <div class="hand right-hand"></div>
+
+        <div class="leg left-leg"></div>
+        <div class="leg right-leg"></div>
+
+        <div class="shoe left-shoe"></div>
+        <div class="shoe right-shoe"></div>
+
+    </div>
+
 
     <div class="logo">
         ynw shenzhen
@@ -785,6 +1264,7 @@ footer strong{
     <div class="tagline">
         <span>beats</span> // sounds // whatever i'm on
     </div>
+
 
     <nav>
         <a href="#home">home</a>
@@ -796,8 +1276,6 @@ footer strong{
 </header>
 
 
-<!-- TICKER -->
-
 <div class="ticker">
 
     <span>
@@ -808,377 +1286,743 @@ footer strong{
 </div>
 
 
-<!-- INTRO -->
-
 <section>
 
-    <div class="intro">
+<div class="intro">
+
+<div class="panel">
+
+<div class="panel-title">
+    // who is this guy
+</div>
+
+<div class="intro-content">
+
+<h1>
+    yo.<br>
+    i'm <span>shenzhen.</span>
+</h1>
+
+<p>
+    beatmaker / producer / sound addict.
+    just making shit that sounds good to me.
+</p>
+
+<p>
+    if you found this page,
+    you're already in the
+    <span class="slang">right spot.</span>
+</p>
+
+<p>
+    headphones on.
+    volume up.
+    <span class="slang">let that shit knock.</span>
+</p>
+
+</div>
+</div>
 
 
-        <div class="panel">
+<div class="panel photo">
 
-            <div class="panel-title">
-                // who is this guy
-            </div>
+<div class="photo-text">
 
-            <div class="intro-content">
+    this ain't<br>
+    your average<br>
+    beat page ★
 
-                <h1>
-                    yo.<br>
-                    i'm <span>shenzhen.</span>
-                </h1>
+</div>
 
-                <p>
-                    beatmaker / producer / sound addict.
-                    just making shit that sounds good to me.
-                </p>
+</div>
 
-                <p>
-                    if you found this page,
-                    you're already in the
-                    <span class="slang">right spot.</span>
-                </p>
-
-                <p>
-                    headphones on.
-                    volume up.
-                    <span class="slang">let that shit knock.</span>
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="panel photo">
-
-            <div class="photo-text">
-                this ain't<br>
-                your average<br>
-                beat page ★
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-
-<!-- BEATS -->
 
 <section id="beats">
 
-    <div class="section-title">
-        ★ the beats
-    </div>
+<div class="section-title">
+    ★ the beats
+</div>
 
 
-    <div class="beats">
+<div class="beats">
 
 
-        <!-- BEAT 01 -->
+<div class="beat">
 
-        <div class="beat">
+<div class="number">01</div>
 
-            <div class="number">
-                01
-            </div>
+<div class="beat-info">
 
-            <div class="beat-info">
+<strong>
+    swagg + kay randy + rnb type beat
+</strong>
 
-                <strong>
-                    swagg + kay randy + rnb type beat
-                </strong>
+<small>
+    ynw shenzhen // 2010 shit
+</small>
 
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
+</div>
 
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- BEAT 02 -->
-
-        <div class="beat">
-
-            <div class="number">
-                02
-            </div>
-
-            <div class="beat-info">
-
-                <strong>
-                    2010s jhene aiko type beat (4)
-                </strong>
-
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
-
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- BEAT 03 -->
-
-        <div class="beat">
-
-            <div class="number">
-                03
-            </div>
-
-            <div class="beat-info">
-
-                <strong>
-                    2010s jhene aiko type beat (3)
-                </strong>
-
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
-
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- BEAT 04 -->
-
-        <div class="beat">
-
-            <div class="number">
-                04
-            </div>
-
-            <div class="beat-info">
-
-                <strong>
-                    2010s jhene aiko type beat
-                </strong>
-
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
-
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- BEAT 05 -->
-
-        <div class="beat">
-
-            <div class="number">
-                05
-            </div>
-
-            <div class="beat-info">
-
-                <strong>
-                    2010s drake + lil wayne type beat
-                </strong>
-
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
-
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- BEAT 06 -->
-
-        <div class="beat">
-
-            <div class="number">
-                06
-            </div>
-
-            <div class="beat-info">
-
-                <strong>
-                    2010s jhene aiko type beat (2)
-                </strong>
-
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
-
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- BEAT 07 -->
-
-        <div class="beat">
-
-            <div class="number">
-                07
-            </div>
-
-            <div class="beat-info">
-
-                <strong>
-                    2010s jhene aiko type beat (1)
-                </strong>
-
-                <small>
-                    ynw shenzhen // 2010 shit
-                </small>
-
-            </div>
-
-            <button class="play">
-                ▶
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- PLAYER -->
-
-<section id="player">
-
-    <div class="section-title">
-        ♫ now playing
-    </div>
-
-    <div class="player-placeholder">
-
-        <strong>
-            player coming soon...
-        </strong>
-
-        we're gonna make this shit clean later ★
-
-    </div>
-
-</section>
-
-
-<!-- SOCIALS -->
-
-<section id="connect">
-
-    <div class="section-title">
-        ★ find me
-    </div>
-
-
-    <div class="socials">
-
-        <a
-            class="social"
-            href="https://www.youtube.com/@ynwshenzhen"
-            target="_blank"
-            rel="noopener"
-        >
-            youtube
-        </a>
-
-
-        <a
-            class="social"
-            href="https://www.instagram.com/yopcshane/"
-            target="_blank"
-            rel="noopener"
-        >
-            instagram
-        </a>
-
-
-        <a
-            class="social"
-            href="https://www.tiktok.com/@ynw_shenzhen"
-            target="_blank"
-            rel="noopener"
-        >
-            tiktok
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- STICKERS -->
-
-<div class="stickers">
-
-    <div class="sticker">
-        ynw shenzhen ★
-    </div>
-
-    <div class="sticker">
-        this shit knock
-    </div>
-
-    <div class="sticker">
-        no sleep
-    </div>
-
-    <div class="sticker">
-        2010 forever
-    </div>
+<button
+    class="play"
+    onclick="playBeat(0)"
+>
+    ▶
+</button>
 
 </div>
 
 
-<!-- FOOTER -->
+<div class="beat">
+
+<div class="number">02</div>
+
+<div class="beat-info">
+
+<strong>
+    2010s jhene aiko type beat (4)
+</strong>
+
+<small>
+    ynw shenzhen // 2010 shit
+</small>
+
+</div>
+
+<button
+    class="play"
+    onclick="playBeat(1)"
+>
+    ▶
+</button>
+
+</div>
+
+
+<div class="beat">
+
+<div class="number">03</div>
+
+<div class="beat-info">
+
+<strong>
+    2010s jhene aiko type beat (3)
+</strong>
+
+<small>
+    ynw shenzhen // 2010 shit
+</small>
+
+</div>
+
+<button
+    class="play"
+    onclick="playBeat(2)"
+>
+    ▶
+</button>
+
+</div>
+
+
+<div class="beat">
+
+<div class="number">04</div>
+
+<div class="beat-info">
+
+<strong>
+    2010s jhene aiko type beat
+</strong>
+
+<small>
+    ynw shenzhen // 2010 shit
+</small>
+
+</div>
+
+<button
+    class="play"
+    onclick="playBeat(3)"
+>
+    ▶
+</button>
+
+</div>
+
+
+<div class="beat">
+
+<div class="number">05</div>
+
+<div class="beat-info">
+
+<strong>
+    2010s drake + lil wayne type beat
+</strong>
+
+<small>
+    ynw shenzhen // 2010 shit
+</small>
+
+</div>
+
+<button
+    class="play"
+    onclick="playBeat(4)"
+>
+    ▶
+</button>
+
+</div>
+
+
+<div class="beat">
+
+<div class="number">06</div>
+
+<div class="beat-info">
+
+<strong>
+    2010s jhene aiko type beat (2)
+</strong>
+
+<small>
+    ynw shenzhen // 2010 shit
+</small>
+
+</div>
+
+<button
+    class="play"
+    onclick="playBeat(5)"
+>
+    ▶
+</button>
+
+</div>
+
+
+<div class="beat">
+
+<div class="number">07</div>
+
+<div class="beat-info">
+
+<strong>
+    2010s jhene aiko type beat (1)
+</strong>
+
+<small>
+    ynw shenzhen // 2010 shit
+</small>
+
+</div>
+
+<button
+    class="play"
+    onclick="playBeat(6)"
+>
+    ▶
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section id="player">
+
+<div class="section-title">
+    ♫ now playing
+</div>
+
+
+<div class="player">
+
+<div class="player-top">
+
+
+<div
+    class="disc"
+    id="disc"
+>
+    ♫
+</div>
+
+
+<div class="player-info">
+
+<strong id="trackName">
+    nothing playing...
+</strong>
+
+<small id="status">
+    pick a beat & let that shit knock
+</small>
+
+</div>
+
+
+<div class="controls">
+
+<button
+    class="control"
+    onclick="previousBeat()"
+>
+    ◀
+</button>
+
+<button
+    class="control"
+    onclick="togglePlay()"
+    id="mainPlay"
+>
+    ▶
+</button>
+
+<button
+    class="control"
+    onclick="stopBeat()"
+>
+    ■
+</button>
+
+</div>
+
+</div>
+
+
+<div class="progress-row">
+
+<div
+    class="time"
+    id="currentTime"
+>
+    0:00
+</div>
+
+<div
+    class="progress"
+    id="progress"
+>
+
+<div
+    class="progress-fill"
+    id="progressFill"
+></div>
+
+</div>
+
+<div
+    class="time"
+    id="duration"
+>
+    0:00
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="connect">
+
+<div class="section-title">
+    ★ find me
+</div>
+
+<div class="socials">
+
+<a
+    class="social"
+    href="https://www.youtube.com/@ynwshenzhen"
+    target="_blank"
+    rel="noopener"
+>
+    youtube
+</a>
+
+<a
+    class="social"
+    href="https://www.instagram.com/yopcshane/"
+    target="_blank"
+    rel="noopener"
+>
+    instagram
+</a>
+
+<a
+    class="social"
+    href="https://www.tiktok.com/@ynw_shenzhen"
+    target="_blank"
+    rel="noopener"
+>
+    tiktok
+</a>
+
+</div>
+
+</section>
+
+
+<div class="stickers">
+
+<div class="sticker">
+    ynw shenzhen ★
+</div>
+
+<div class="sticker">
+    this shit knock
+</div>
+
+<div class="sticker">
+    no sleep
+</div>
+
+<div class="sticker">
+    2010 forever
+</div>
+
+</div>
+
 
 <footer>
 
-    <strong>ynw shenzhen</strong>
-    <br>
+<strong>ynw shenzhen</strong>
+<br>
 
-    beats / production / sounds
-    <br>
+beats / production / sounds
+<br>
 
-    made for the ones who stay up late ★
-    <br><br>
+made for the ones who stay up late ★
+<br><br>
 
-    © 2010 — 2026 ynw shenzhen
+© 2010 — 2026 ynw shenzhen
 
 </footer>
 
 
 </div>
+
+
+<audio id="audio"></audio>
+
+
+<script>
+
+const beats = [
+
+{
+    name:"swagg + kay randy + rnb type beat",
+    file:"assets/beats/beat01.mp3"
+},
+
+{
+    name:"2010s jhene aiko type beat (4)",
+    file:"assets/beats/beat02.mp3"
+},
+
+{
+    name:"2010s jhene aiko type beat (3)",
+    file:"assets/beats/beat03.mp3"
+},
+
+{
+    name:"2010s jhene aiko type beat",
+    file:"assets/beats/beat04.mp3"
+},
+
+{
+    name:"2010s drake + lil wayne type beat",
+    file:"assets/beats/beat05.mp3"
+},
+
+{
+    name:"2010s jhene aiko type beat (2)",
+    file:"assets/beats/beat06.mp3"
+},
+
+{
+    name:"2010s jhene aiko type beat (1)",
+    file:"assets/beats/beat07.mp3"
+}
+
+];
+
+
+const audio =
+document.getElementById("audio");
+
+const trackName =
+document.getElementById("trackName");
+
+const status =
+document.getElementById("status");
+
+const disc =
+document.getElementById("disc");
+
+const mainPlay =
+document.getElementById("mainPlay");
+
+const currentTime =
+document.getElementById("currentTime");
+
+const duration =
+document.getElementById("duration");
+
+const progress =
+document.getElementById("progress");
+
+const progressFill =
+document.getElementById("progressFill");
+
+const buttons =
+document.querySelectorAll(".play");
+
+
+let currentBeat = -1;
+
+
+/* PLAY */
+
+function playBeat(index){
+
+currentBeat = index;
+
+audio.src =
+beats[index].file;
+
+trackName.textContent =
+beats[index].name;
+
+status.textContent =
+"ynw shenzhen // this shit knockin'";
+
+audio.play();
+
+buttons.forEach((button,i)=>{
+
+button.classList.toggle(
+    "active",
+    i === index
+);
+
+});
+
+updatePlayer();
+
+}
+
+
+/* PLAY PAUSE */
+
+function togglePlay(){
+
+if(currentBeat === -1){
+
+playBeat(0);
+
+return;
+
+}
+
+if(audio.paused){
+
+audio.play();
+
+}else{
+
+audio.pause();
+
+}
+
+updatePlayer();
+
+}
+
+
+/* STOP */
+
+function stopBeat(){
+
+audio.pause();
+
+audio.currentTime = 0;
+
+updatePlayer();
+
+}
+
+
+/* PREVIOUS */
+
+function previousBeat(){
+
+if(currentBeat <= 0){
+
+playBeat(0);
+
+}else{
+
+playBeat(
+currentBeat - 1
+);
+
+}
+
+}
+
+
+/* TIME */
+
+function formatTime(seconds){
+
+if(!Number.isFinite(seconds)){
+return "0:00";
+}
+
+const minutes =
+Math.floor(seconds / 60);
+
+const secs =
+Math.floor(seconds % 60)
+.toString()
+.padStart(2,"0");
+
+return minutes + ":" + secs;
+
+}
+
+
+/* PROGRESS */
+
+audio.addEventListener(
+"timeupdate",
+()=>{
+
+if(!audio.duration){
+return;
+}
+
+const percent =
+(audio.currentTime /
+audio.duration) * 100;
+
+progressFill.style.width =
+percent + "%";
+
+currentTime.textContent =
+formatTime(audio.currentTime);
+
+}
+);
+
+
+/* DURATION */
+
+audio.addEventListener(
+"loadedmetadata",
+()=>{
+
+duration.textContent =
+formatTime(audio.duration);
+
+}
+);
+
+
+/* SEEK */
+
+progress.addEventListener(
+"click",
+event=>{
+
+if(!audio.duration){
+return;
+}
+
+const rect =
+progress.getBoundingClientRect();
+
+const position =
+(event.clientX - rect.left)
+/
+rect.width;
+
+audio.currentTime =
+position * audio.duration;
+
+}
+);
+
+
+/* AUTO NEXT */
+
+audio.addEventListener(
+"ended",
+()=>{
+
+if(currentBeat <
+beats.length - 1){
+
+playBeat(
+currentBeat + 1
+);
+
+}else{
+
+currentBeat = -1;
+
+trackName.textContent =
+"nothing playing...";
+
+status.textContent =
+"that's all for now ★";
+
+buttons.forEach(button=>{
+button.classList.remove("active");
+});
+
+updatePlayer();
+
+}
+
+}
+);
+
+
+/* UI */
+
+function updatePlayer(){
+
+if(audio.paused){
+
+mainPlay.textContent = "▶";
+
+disc.classList.remove("spin");
+
+}else{
+
+mainPlay.textContent = "Ⅱ";
+
+disc.classList.add("spin");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
