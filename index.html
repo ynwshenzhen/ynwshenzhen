@@ -1,10 +1,4 @@
-<div class="panel photo">
-
-    <div class="photo-text">
-        just be swagg ★
-    </div>
-
-</div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -89,11 +83,14 @@ body::before{
     justify-content:space-between;
     align-items:center;
     padding:0 10px;
+
     background:linear-gradient(#777,#222);
     border:1px solid #999;
+
     color:#ddd;
     font-size:10px;
     font-family:monospace;
+
     box-shadow:0 3px 8px #000;
 }
 
@@ -103,7 +100,9 @@ header{
     margin-top:3px;
     min-height:390px;
     position:relative;
+
     padding:55px 30px 35px;
+
     overflow:hidden;
 
     border:1px solid #777;
@@ -124,10 +123,13 @@ header{
 header::before{
     content:"";
     position:absolute;
+
     width:500px;
     height:500px;
+
     left:50%;
     top:50%;
+
     transform:translate(-50%,-50%);
 
     background:radial-gradient(
@@ -187,27 +189,29 @@ header::before{
     text-decoration:underline;
 }
 
-/* CARTOON DUDES */
+/* =========================
+   SWAGGY CARTOON DUDES
+   ========================= */
 
 .dude{
     position:absolute;
     z-index:4;
 
     width:115px;
-    height:190px;
+    height:220px;
 
     animation:bob 3s ease-in-out infinite;
 }
 
 .dude.left{
     left:35px;
-    bottom:45px;
+    bottom:42px;
     transform:rotate(-7deg);
 }
 
 .dude.right{
     right:35px;
-    bottom:45px;
+    bottom:42px;
     transform:rotate(7deg);
     animation-delay:1.2s;
 }
@@ -239,8 +243,7 @@ header::before{
 
     border:3px solid #111;
 
-    box-shadow:
-        5px 5px #000;
+    box-shadow:5px 5px #000;
 }
 
 /* HAIR */
@@ -248,19 +251,19 @@ header::before{
 .hair{
     position:absolute;
 
-    width:75px;
-    height:28px;
+    width:78px;
+    height:30px;
 
-    left:-3px;
-    top:-8px;
+    left:-5px;
+    top:-10px;
 
     background:#111;
 
-    border-radius:60% 45% 20% 30%;
-
-    transform:rotate(-4deg);
+    border-radius:65% 45% 15% 30%;
 
     border:3px solid #111;
+
+    transform:rotate(-4deg);
 }
 
 /* FACE */
@@ -275,7 +278,7 @@ header::before{
 
     border-radius:50%;
 
-    top:34px;
+    top:35px;
 }
 
 .eye.one{
@@ -322,8 +325,6 @@ header::before{
     border:3px solid #111;
 
     background:#555;
-
-    opacity:.95;
 }
 
 /* BODY */
@@ -386,7 +387,7 @@ header::before{
     transform:rotate(-45deg);
 }
 
-/* HAND */
+/* HANDS */
 
 .hand{
     position:absolute;
@@ -461,7 +462,7 @@ header::before{
     right:10px;
 }
 
-/* SECOND DUDE DIFFERENCE */
+/* DIFFERENT RIGHT CHARACTER */
 
 .dude.right .body{
     background:#555;
@@ -637,7 +638,7 @@ nav a:hover{
     font-weight:bold;
 }
 
-/* PHOTO */
+/* BIG BUBBLE */
 
 .photo{
     min-height:280px;
@@ -681,16 +682,17 @@ nav a:hover{
 
 .photo-text{
     position:relative;
+    z-index:2;
 
     text-align:center;
 
     font-family:'Permanent Marker',cursive;
 
-    font-size:27px;
+    font-size:32px;
 
     transform:rotate(-5deg);
 
-    text-shadow:3px 3px #000;
+    text-shadow:4px 4px #000;
 }
 
 /* SECTIONS */
@@ -757,13 +759,6 @@ section{
     transform:translateX(4px);
 
     border-color:#aaa;
-
-    background:
-        linear-gradient(
-            135deg,
-            #444,
-            #111
-        );
 }
 
 .number{
@@ -914,7 +909,9 @@ section{
 }
 
 @keyframes spin{
-    to{transform:rotate(360deg)}
+    to{
+        transform:rotate(360deg);
+    }
 }
 
 .player-info{
@@ -1167,7 +1164,6 @@ footer strong{
 </style>
 </head>
 
-
 <body>
 
 <div class="star s1">✦</div>
@@ -1189,105 +1185,106 @@ footer strong{
 <header id="home">
 
 
-    <!-- LEFT CARTOON -->
+<!-- LEFT DUDE -->
 
-    <div class="dude left">
+<div class="dude left">
 
-        <div class="head">
+    <div class="head">
 
-            <div class="hair"></div>
+        <div class="hair"></div>
 
-            <div class="eye one"></div>
-            <div class="eye two"></div>
+        <div class="eye one"></div>
+        <div class="eye two"></div>
 
-            <div class="mouth"></div>
+        <div class="mouth"></div>
 
-            <div class="glasses">
-                <div class="glass"></div>
-                <div class="glass"></div>
-            </div>
-
+        <div class="glasses">
+            <div class="glass"></div>
+            <div class="glass"></div>
         </div>
 
-        <div class="body"></div>
-
-        <div class="arm left-arm"></div>
-        <div class="arm right-arm"></div>
-
-        <div class="hand left-hand"></div>
-        <div class="hand right-hand"></div>
-
-        <div class="leg left-leg"></div>
-        <div class="leg right-leg"></div>
-
-        <div class="shoe left-shoe"></div>
-        <div class="shoe right-shoe"></div>
-
     </div>
 
+    <div class="body"></div>
 
-    <!-- RIGHT CARTOON -->
+    <div class="arm left-arm"></div>
+    <div class="arm right-arm"></div>
 
-    <div class="dude right">
+    <div class="hand left-hand"></div>
+    <div class="hand right-hand"></div>
 
-        <div class="head">
+    <div class="leg left-leg"></div>
+    <div class="leg right-leg"></div>
 
-            <div class="hair"></div>
+    <div class="shoe left-shoe"></div>
+    <div class="shoe right-shoe"></div>
 
-            <div class="eye one"></div>
-            <div class="eye two"></div>
+</div>
 
-            <div class="mouth"></div>
 
-            <div class="glasses">
-                <div class="glass"></div>
-                <div class="glass"></div>
-            </div>
+<!-- RIGHT DUDE -->
 
+<div class="dude right">
+
+    <div class="head">
+
+        <div class="hair"></div>
+
+        <div class="eye one"></div>
+        <div class="eye two"></div>
+
+        <div class="mouth"></div>
+
+        <div class="glasses">
+            <div class="glass"></div>
+            <div class="glass"></div>
         </div>
 
-        <div class="body"></div>
-
-        <div class="arm left-arm"></div>
-        <div class="arm right-arm"></div>
-
-        <div class="hand left-hand"></div>
-        <div class="hand right-hand"></div>
-
-        <div class="leg left-leg"></div>
-        <div class="leg right-leg"></div>
-
-        <div class="shoe left-shoe"></div>
-        <div class="shoe right-shoe"></div>
-
     </div>
 
+    <div class="body"></div>
 
-    <div class="logo">
-        ynw shenzhen
-    </div>
+    <div class="arm left-arm"></div>
+    <div class="arm right-arm"></div>
 
-    <div class="tagline">
-        <span>beats</span> // sounds // whatever i'm on
-    </div>
+    <div class="hand left-hand"></div>
+    <div class="hand right-hand"></div>
+
+    <div class="leg left-leg"></div>
+    <div class="leg right-leg"></div>
+
+    <div class="shoe left-shoe"></div>
+    <div class="shoe right-shoe"></div>
+
+</div>
 
 
-    <nav>
-        <a href="#home">home</a>
-        <a href="#beats">beats</a>
-        <a href="#player">player</a>
-        <a href="#connect">connect</a>
-    </nav>
+<div class="logo">
+    ynw shenzhen
+</div>
+
+
+<div class="tagline">
+    <span>beats</span> // sounds // whatever i'm on
+</div>
+
+
+<nav>
+    <a href="#home">home</a>
+    <a href="#beats">beats</a>
+    <a href="#player">player</a>
+    <a href="#connect">connect</a>
+</nav>
 
 </header>
 
 
 <div class="ticker">
 
-    <span>
-        ★ NEW BEATS UP ★ SHOUTOUT TO EVERYBODY ROCKIN WITH ME ★
-        NO SLEEP ★ NO RULES ★ JUST VIBES ★ YNW SHENZHEN ★
-    </span>
+<span>
+★ NEW BEATS UP ★ SHOUTOUT TO EVERYBODY ROCKIN WITH ME ★
+NO SLEEP ★ NO RULES ★ JUST VIBES ★ YNW SHENZHEN ★
+</span>
 
 </div>
 
@@ -1295,6 +1292,7 @@ footer strong{
 <section>
 
 <div class="intro">
+
 
 <div class="panel">
 
@@ -1305,42 +1303,42 @@ footer strong{
 <div class="intro-content">
 
 <h1>
-    yo.<br>
-    i'm <span>shenzhen.</span>
+yo.<br>
+i'm <span>shenzhen.</span>
 </h1>
 
 <p>
-    beatmaker / producer / sound addict.
-    just making shit that sounds good to me.
+beatmaker / producer / sound addict.
+just making shit that sounds good to me.
 </p>
 
 <p>
-    if you found this page,
-    you're already in the
-    <span class="slang">right spot.</span>
+if you found this page,
+you're already in the
+<span class="slang">right spot.</span>
 </p>
 
 <p>
-    headphones on.
-    volume up.
-    <span class="slang">let that shit knock.</span>
+headphones on.
+volume up.
+<span class="slang">let that shit knock.</span>
 </p>
 
 </div>
+
 </div>
 
+
+<!-- BIG BUBBLE -->
 
 <div class="panel photo">
 
 <div class="photo-text">
-
-    this ain't<br>
-    your average<br>
-    beat page ★
-
+    just be swagg ★
 </div>
 
 </div>
+
 
 </div>
 
@@ -1350,7 +1348,7 @@ footer strong{
 <section id="beats">
 
 <div class="section-title">
-    ★ the beats
+★ the beats
 </div>
 
 
@@ -1364,20 +1362,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    swagg + kay randy + rnb type beat
+swagg + kay randy + rnb type beat
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(0)"
->
-    ▶
+<button class="play" onclick="playBeat(0)">
+▶
 </button>
 
 </div>
@@ -1390,20 +1385,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    2010s jhene aiko type beat (4)
+2010s jhene aiko type beat (4)
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(1)"
->
-    ▶
+<button class="play" onclick="playBeat(1)">
+▶
 </button>
 
 </div>
@@ -1416,20 +1408,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    2010s jhene aiko type beat (3)
+2010s jhene aiko type beat (3)
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(2)"
->
-    ▶
+<button class="play" onclick="playBeat(2)">
+▶
 </button>
 
 </div>
@@ -1442,20 +1431,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    2010s jhene aiko type beat
+2010s jhene aiko type beat
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(3)"
->
-    ▶
+<button class="play" onclick="playBeat(3)">
+▶
 </button>
 
 </div>
@@ -1468,20 +1454,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    2010s drake + lil wayne type beat
+2010s drake + lil wayne type beat
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(4)"
->
-    ▶
+<button class="play" onclick="playBeat(4)">
+▶
 </button>
 
 </div>
@@ -1494,20 +1477,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    2010s jhene aiko type beat (2)
+2010s jhene aiko type beat (2)
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(5)"
->
-    ▶
+<button class="play" onclick="playBeat(5)">
+▶
 </button>
 
 </div>
@@ -1520,20 +1500,17 @@ footer strong{
 <div class="beat-info">
 
 <strong>
-    2010s jhene aiko type beat (1)
+2010s jhene aiko type beat (1)
 </strong>
 
 <small>
-    ynw shenzhen // 2010 shit
+ynw shenzhen // 2010 shit
 </small>
 
 </div>
 
-<button
-    class="play"
-    onclick="playBeat(6)"
->
-    ▶
+<button class="play" onclick="playBeat(6)">
+▶
 </button>
 
 </div>
@@ -1547,7 +1524,7 @@ footer strong{
 <section id="player">
 
 <div class="section-title">
-    ♫ now playing
+♫ now playing
 </div>
 
 
@@ -1556,22 +1533,19 @@ footer strong{
 <div class="player-top">
 
 
-<div
-    class="disc"
-    id="disc"
->
-    ♫
+<div class="disc" id="disc">
+♫
 </div>
 
 
 <div class="player-info">
 
 <strong id="trackName">
-    nothing playing...
+nothing playing...
 </strong>
 
 <small id="status">
-    pick a beat & let that shit knock
+pick a beat & let that shit knock
 </small>
 
 </div>
@@ -1579,26 +1553,16 @@ footer strong{
 
 <div class="controls">
 
-<button
-    class="control"
-    onclick="previousBeat()"
->
-    ◀
+<button class="control" onclick="previousBeat()">
+◀
 </button>
 
-<button
-    class="control"
-    onclick="togglePlay()"
-    id="mainPlay"
->
-    ▶
+<button class="control" onclick="togglePlay()" id="mainPlay">
+▶
 </button>
 
-<button
-    class="control"
-    onclick="stopBeat()"
->
-    ■
+<button class="control" onclick="stopBeat()">
+■
 </button>
 
 </div>
@@ -1608,30 +1572,19 @@ footer strong{
 
 <div class="progress-row">
 
-<div
-    class="time"
-    id="currentTime"
->
-    0:00
+<div class="time" id="currentTime">
+0:00
 </div>
 
-<div
-    class="progress"
-    id="progress"
->
+<div class="progress" id="progress">
 
-<div
-    class="progress-fill"
-    id="progressFill"
-></div>
+<div class="progress-fill" id="progressFill">
+</div>
 
 </div>
 
-<div
-    class="time"
-    id="duration"
->
-    0:00
+<div class="time" id="duration">
+0:00
 </div>
 
 </div>
@@ -1644,36 +1597,39 @@ footer strong{
 <section id="connect">
 
 <div class="section-title">
-    ★ find me
+★ find me
 </div>
+
 
 <div class="socials">
 
 <a
-    class="social"
-    href="https://www.youtube.com/@ynwshenzhen"
-    target="_blank"
-    rel="noopener"
+class="social"
+href="https://www.youtube.com/@ynwshenzhen"
+target="_blank"
+rel="noopener"
 >
-    youtube
+youtube
 </a>
 
-<a
-    class="social"
-    href="https://www.instagram.com/yopcshane/"
-    target="_blank"
-    rel="noopener"
->
-    instagram
-</a>
 
 <a
-    class="social"
-    href="https://www.tiktok.com/@ynw_shenzhen"
-    target="_blank"
-    rel="noopener"
+class="social"
+href="https://www.instagram.com/yopcshane/"
+target="_blank"
+rel="noopener"
 >
-    tiktok
+instagram
+</a>
+
+
+<a
+class="social"
+href="https://www.tiktok.com/@ynw_shenzhen"
+target="_blank"
+rel="noopener"
+>
+tiktok
 </a>
 
 </div>
@@ -1684,19 +1640,19 @@ footer strong{
 <div class="stickers">
 
 <div class="sticker">
-    ynw shenzhen ★
+ynw shenzhen ★
 </div>
 
 <div class="sticker">
-    this shit knock
+this shit knock
 </div>
 
 <div class="sticker">
-    no sleep
+no sleep
 </div>
 
 <div class="sticker">
-    2010 forever
+2010 forever
 </div>
 
 </div>
@@ -1721,7 +1677,7 @@ made for the ones who stay up late ★
 </div>
 
 
-<audio id="audio"></audio>
+<audio id="audio" preload="metadata"></audio>
 
 
 <script>
@@ -1729,38 +1685,38 @@ made for the ones who stay up late ★
 const beats = [
 
 {
-    name:"swagg + kay randy + rnb type beat",
-    file:"assets/beats/beat01.mp3"
+name:"swagg + kay randy + rnb type beat",
+file:"assets/beats/beat01.mp3"
 },
 
 {
-    name:"2010s jhene aiko type beat (4)",
-    file:"assets/beats/beat02.mp3"
+name:"2010s jhene aiko type beat (4)",
+file:"assets/beats/beat02.mp3"
 },
 
 {
-    name:"2010s jhene aiko type beat (3)",
-    file:"assets/beats/beat03.mp3"
+name:"2010s jhene aiko type beat (3)",
+file:"assets/beats/beat03.mp3"
 },
 
 {
-    name:"2010s jhene aiko type beat",
-    file:"assets/beats/beat04.mp3"
+name:"2010s jhene aiko type beat",
+file:"assets/beats/beat04.mp3"
 },
 
 {
-    name:"2010s drake + lil wayne type beat",
-    file:"assets/beats/beat05.mp3"
+name:"2010s drake + lil wayne type beat",
+file:"assets/beats/beat05.mp3"
 },
 
 {
-    name:"2010s jhene aiko type beat (2)",
-    file:"assets/beats/beat06.mp3"
+name:"2010s jhene aiko type beat (2)",
+file:"assets/beats/beat06.mp3"
 },
 
 {
-    name:"2010s jhene aiko type beat (1)",
-    file:"assets/beats/beat07.mp3"
+name:"2010s jhene aiko type beat (1)",
+file:"assets/beats/beat07.mp3"
 }
 
 ];
@@ -1806,32 +1762,69 @@ function playBeat(index){
 
 currentBeat = index;
 
-audio.src =
-beats[index].file;
+const beat = beats[index];
+
+audio.pause();
+
+audio.src = beat.file;
+
+audio.load();
 
 trackName.textContent =
-beats[index].name;
+beat.name;
 
 status.textContent =
-"ynw shenzhen // this shit knockin'";
+"loading...";
 
-audio.play();
 
 buttons.forEach((button,i)=>{
 
 button.classList.toggle(
-    "active",
-    i === index
+"active",
+i === index
 );
 
 });
 
+
+audio.play()
+
+.then(()=>{
+
+status.textContent =
+"ynw shenzhen // this shit knockin'";
+
 updatePlayer();
+
+})
+
+.catch((error)=>{
+
+console.error(
+"Audio error:",
+error
+);
+
+status.textContent =
+"couldn't load the mp3";
+
+mainPlay.textContent =
+"▶";
+
+disc.classList.remove("spin");
+
+alert(
+"MP3 introuvable : " +
+beat.file +
+"\n\nVérifie que le fichier existe bien dans assets/beats/"
+);
+
+});
 
 }
 
 
-/* PLAY PAUSE */
+/* PLAY / PAUSE */
 
 function togglePlay(){
 
@@ -1843,17 +1836,37 @@ return;
 
 }
 
+
 if(audio.paused){
 
-audio.play();
+audio.play()
+
+.then(()=>{
+
+status.textContent =
+"ynw shenzhen // this shit knockin'";
+
+updatePlayer();
+
+})
+
+.catch(()=>{
+
+status.textContent =
+"couldn't play this mp3";
+
+});
 
 }else{
 
 audio.pause();
 
-}
+status.textContent =
+"paused // press play";
 
 updatePlayer();
+
+}
 
 }
 
@@ -1865,6 +1878,15 @@ function stopBeat(){
 audio.pause();
 
 audio.currentTime = 0;
+
+progressFill.style.width =
+"0%";
+
+currentTime.textContent =
+"0:00";
+
+status.textContent =
+"stopped // pick a beat";
 
 updatePlayer();
 
@@ -1890,7 +1912,7 @@ currentBeat - 1
 }
 
 
-/* TIME */
+/* FORMAT TIME */
 
 function formatTime(seconds){
 
@@ -1911,7 +1933,7 @@ return minutes + ":" + secs;
 }
 
 
-/* PROGRESS */
+/* TIME UPDATE */
 
 audio.addEventListener(
 "timeupdate",
@@ -1944,6 +1966,42 @@ audio.addEventListener(
 duration.textContent =
 formatTime(audio.duration);
 
+status.textContent =
+"ready // press play";
+
+}
+);
+
+
+/* AUDIO READY */
+
+audio.addEventListener(
+"canplay",
+()=>{
+
+console.log(
+"Audio loaded:",
+audio.src
+);
+
+}
+);
+
+
+/* AUDIO ERROR */
+
+audio.addEventListener(
+"error",
+()=>{
+
+console.error(
+"Could not load:",
+audio.src
+);
+
+status.textContent =
+"mp3 not found";
+
 }
 );
 
@@ -1952,7 +2010,7 @@ formatTime(audio.duration);
 
 progress.addEventListener(
 "click",
-event=>{
+(event)=>{
 
 if(!audio.duration){
 return;
@@ -2000,6 +2058,12 @@ buttons.forEach(button=>{
 button.classList.remove("active");
 });
 
+progressFill.style.width =
+"0%";
+
+currentTime.textContent =
+"0:00";
+
 updatePlayer();
 
 }
@@ -2014,15 +2078,21 @@ function updatePlayer(){
 
 if(audio.paused){
 
-mainPlay.textContent = "▶";
+mainPlay.textContent =
+"▶";
 
-disc.classList.remove("spin");
+disc.classList.remove(
+"spin"
+);
 
 }else{
 
-mainPlay.textContent = "Ⅱ";
+mainPlay.textContent =
+"Ⅱ";
 
-disc.classList.add("spin");
+disc.classList.add(
+"spin"
+);
 
 }
 
@@ -2032,3 +2102,4 @@ disc.classList.add("spin");
 
 </body>
 </html>
+    
