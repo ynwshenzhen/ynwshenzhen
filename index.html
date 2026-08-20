@@ -1,772 +1,1915 @@
-```html
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YOUNG MONEY // 2010</title>
+
+<title>2010 SHI // OLD INTERNET</title>
 
 <style>
-*{box-sizing:border-box}
 
-html,body{
-    margin:0;
-    min-height:100%;
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
+    margin:0;
     font-family:Tahoma,Arial,sans-serif;
-    color:#111;
+    color:#17202a;
+    min-height:100vh;
     overflow-x:hidden;
 
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,255,255,.22),transparent 18%),
-        radial-gradient(circle at 80% 70%,rgba(0,0,0,.25),transparent 25%),
-        linear-gradient(135deg,#163e72 0%,#2877bd 42%,#0d315e 100%);
+        radial-gradient(circle at 15% 15%,rgba(255,255,255,.95),transparent 15%),
+        radial-gradient(circle at 85% 30%,rgba(255,255,255,.7),transparent 14%),
+        radial-gradient(circle at 70% 85%,rgba(100,220,255,.45),transparent 25%),
+        linear-gradient(
+            180deg,
+            #73c9ff 0%,
+            #bcecff 38%,
+            #e9fbff 62%,
+            #76c96b 63%,
+            #277f38 100%
+        );
 }
 
-/* EFFET VIEIL ÉCRAN */
-body:after{
+body:before{
     content:"";
     position:fixed;
     inset:0;
     pointer-events:none;
-    z-index:9999;
-    background:repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,.025) 0px,
-        rgba(255,255,255,.025) 1px,
-        transparent 1px,
-        transparent 3px
-    );
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(255,255,255,.65),
+            transparent 45%
+        );
 }
 
-/* BUREAU */
-.desktop{
-    min-height:calc(100vh - 38px);
-    padding:25px;
-    padding-bottom:70px;
+/* =========================
+   AERO BUBBLES
+========================= */
+
+.bubble{
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            rgba(255,255,255,.4) 15%,
+            rgba(255,255,255,.08) 45%,
+            transparent 70%
+        );
+
+    opacity:.55;
 }
 
-.desktop-icon{
-    width:90px;
-    text-align:center;
-    color:white;
-    text-shadow:1px 1px 2px #000;
-    margin-bottom:25px;
+.b1{
+    width:130px;
+    height:130px;
+    left:3%;
+    top:30%;
 }
 
-.desktop-icon .icon{
-    font-size:42px;
-    display:block;
+.b2{
+    width:75px;
+    height:75px;
+    right:7%;
+    top:18%;
 }
 
-.desktop-icon span{
-    font-size:12px;
+.b3{
+    width:180px;
+    height:180px;
+    right:2%;
+    bottom:12%;
 }
 
-/* FENÊTRE */
-.window{
-    width:min(1050px,95vw);
-    margin:0 auto 25px;
-    background:#ece9d8;
-    border:2px solid #084b9c;
-    border-radius:7px 7px 2px 2px;
-    box-shadow:
-        7px 8px 18px rgba(0,0,0,.55),
-        inset 1px 1px white;
-    overflow:hidden;
-}
+/* =========================
+   TOP BAR
+========================= */
 
-.titlebar{
+.topbar{
     height:34px;
-    padding:4px 7px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
 
-    color:white;
-    font-weight:bold;
-    font-size:14px;
-
-    background:linear-gradient(
-        #5da9ed,
-        #176bc1 45%,
-        #0753a6
-    );
-
-    text-shadow:1px 1px #164477;
-}
-
-.title-left{
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.window-buttons{
-    display:flex;
-    gap:3px;
-}
-
-.window-buttons span{
-    width:22px;
-    height:22px;
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:linear-gradient(#fff,#b8c5d5);
-    color:#111;
-    border:1px solid #123d70;
-    border-radius:3px;
+    background:
+        linear-gradient(
+            #ffffff,
+            #dcecf4 45%,
+            #9fb8c7
+        );
+
+    border-bottom:2px solid #66899b;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.35);
+
+    font-size:11px;
     font-weight:bold;
-    text-shadow:none;
 }
 
-.content{
-    padding:18px;
-}
+/* =========================
+   MOVING BANNER
+========================= */
 
-/* NAV */
-.navbar{
-    padding:9px;
-    margin-bottom:18px;
+.marquee{
+    overflow:hidden;
 
-    background:linear-gradient(#333,#111);
-    border:2px solid #555;
-    box-shadow:inset 0 1px #777;
-    text-align:center;
-}
+    height:32px;
 
-.navbar a{
-    color:white;
-    text-decoration:none;
-    padding:7px 13px;
-    font-size:12px;
-    font-weight:bold;
-    border-right:1px solid #555;
-}
-
-.navbar a:hover{
-    color:#56b9ff;
-    background:#222;
-}
-
-/* HERO */
-.hero{
-    min-height:430px;
-    display:grid;
-    grid-template-columns:1fr 1.2fr;
-    gap:20px;
+    display:flex;
     align-items:center;
 
-    background:
-        radial-gradient(circle at 80% 20%,rgba(255,255,255,.22),transparent 25%),
-        linear-gradient(135deg,#101820,#273848);
+    white-space:nowrap;
 
-    border:1px solid #555;
-    padding:25px;
+    color:white;
+
+    background:
+        linear-gradient(#222,#050505);
+
+    border-top:2px solid #444;
+    border-bottom:2px solid #111;
 }
 
-.hero-text h1{
-    margin:0;
-    font-family:Impact,"Arial Black",sans-serif;
-    font-size:clamp(48px,8vw,100px);
-    line-height:.8;
-    color:white;
+.marquee-track{
+    display:inline-block;
+
+    padding-left:100%;
+
+    animation:
+        scroll 20s linear infinite;
+
+    font-family:"Courier New",monospace;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+}
+
+.marquee-track span{
+    margin-right:80px;
+}
+
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+
+}
+
+/* =========================
+   WRAPPER
+========================= */
+
+.wrapper{
+    width:min(1100px,94%);
+    margin:30px auto 80px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.96),
+            rgba(225,246,255,.88)
+        );
+
+    border:2px solid white;
+    border-radius:8px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.35),
+        inset 0 0 0 1px #74b9d5;
+
+    padding:22px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 330px;
+
+    gap:25px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+
+    font-size:
+        clamp(50px,8vw,95px);
+
+    line-height:.78;
+
     letter-spacing:-4px;
+
+    color:white;
 
     text-shadow:
         3px 3px 0 #111,
-        6px 6px 0 #0b5bb0;
+        6px 6px 0 #2384bd,
+        8px 8px 8px rgba(0,0,0,.25);
 }
 
-.hero-text h2{
-    margin:25px 0 10px;
-    color:#55b7ff;
-    font-size:24px;
+.tagline{
+    margin-top:25px;
+
+    display:inline-block;
+
+    padding:8px 12px;
+
+    background:
+        rgba(255,255,255,.7);
+
+    border:1px solid #9bb9c7;
+
+    box-shadow:
+        inset 0 1px white,
+        2px 2px 0 rgba(0,0,0,.15);
+
+    font-family:"Courier New",monospace;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    color:#24485c;
 }
 
-.hero-text p{
-    color:#ddd;
-    line-height:1.6;
-}
+/* =========================
+   HERO
+========================= */
 
-/* IMAGE HERO */
-.hero-photo{
-    height:330px;
-    padding:8px;
+.hero-image{
+    background:#111;
 
-    background:#222;
+    padding:7px;
+
     border:3px solid #777;
 
     box-shadow:
-        inset 0 0 0 2px #111,
-        8px 8px 0 rgba(0,0,0,.5);
+        6px 7px 0 rgba(0,0,0,.25);
 
     transform:rotate(1deg);
 }
 
-.hero-photo img{
+.hero-image img{
     width:100%;
-    height:100%;
+    height:260px;
+
     object-fit:cover;
+
     display:block;
 }
 
-/* BOUTONS XP */
-.xp-button{
-    display:inline-block;
-    padding:9px 18px;
-    margin:5px 4px 5px 0;
+/* =========================
+   SOCIALS
+========================= */
 
-    color:#111;
+.socials{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:15px;
+}
+
+.social{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    color:white;
+
     text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:11px;
+
+    background:
+        linear-gradient(
+            #555,
+            #111
+        );
+
+    border:2px solid #777;
+
+    border-top-color:#aaa;
+    border-left-color:#aaa;
+
+    box-shadow:
+        2px 2px 0 #333;
+
+    transition:.15s;
+}
+
+.social:hover{
+    background:
+        linear-gradient(
+            #49b9ef,
+            #146b9b
+        );
+
+    transform:
+        translateY(-2px);
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+    margin-top:18px;
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            #f8ffff,
+            #b8d7e7
+        );
+
+    border:2px solid white;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.25);
+
+    padding:7px;
+}
+
+.nav a{
+    color:#123f59;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    padding:9px 17px;
+
+    border-right:1px solid #91acbb;
+}
+
+.nav a:hover{
+    background:white;
+    color:#1683bd;
+}
+
+/* =========================
+   XP WINDOWS
+========================= */
+
+.window{
+    margin-top:20px;
+
+    background:#ece9d8;
+
+    border:2px solid #1767b0;
+
+    border-radius:7px 7px 2px 2px;
+
+    box-shadow:
+        5px 7px 14px rgba(0,0,0,.35);
+}
+
+.titlebar{
+    height:31px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:4px 7px;
+
+    color:white;
+
     font-weight:bold;
     font-size:12px;
 
-    background:linear-gradient(#fff,#d8d8d8 45%,#aaa);
+    background:
+        linear-gradient(
+            #62a9e8,
+            #1767b0 50%,
+            #084d94
+        );
 
-    border:2px solid #777;
-    border-top-color:#fff;
-    border-left-color:#fff;
-
-    box-shadow:
-        inset 0 0 0 1px #ddd,
-        2px 2px 0 #555;
+    text-shadow:
+        1px 1px #174c79;
 }
 
-.xp-button:hover{
-    background:linear-gradient(#e8f5ff,#78bdf0,#2778ba);
-    color:white;
+.title-buttons{
+    display:flex;
+    gap:3px;
 }
 
-.xp-button:active{
-    transform:translate(2px,2px);
-    box-shadow:none;
+.title-buttons span{
+    width:20px;
+    height:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#111;
+
+    background:
+        linear-gradient(
+            #fff,
+            #b9c8d5
+        );
+
+    border:1px solid #164b79;
+
+    border-radius:3px;
 }
 
-/* GRID */
+.window-content{
+    padding:17px;
+}
+
+/* =========================
+   GRID
+========================= */
+
 .grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:18px;
 }
 
 .panel{
-    background:#f6f4e9;
-    border:1px solid #777;
+    background:
+        linear-gradient(
+            #ffffff,
+            #eef8fb
+        );
+
+    border:1px solid #8fa8b5;
 
     box-shadow:
         inset 1px 1px white,
-        3px 3px 0 rgba(0,0,0,.2);
+        3px 3px rgba(0,0,0,.15);
 }
 
 .panel-title{
     padding:8px 10px;
 
     color:white;
-    font-weight:bold;
-    font-size:13px;
 
-    background:linear-gradient(#555,#222);
-    border-bottom:2px solid #111;
+    font-size:12px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            #4b758d,
+            #234555
+        );
+
+    border-bottom:2px solid #172f3a;
 }
 
 .panel-body{
     padding:15px;
 }
 
-/* PHOTOS */
-.photo-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
+/* =========================
+   SWAGGY 2010 MP3 PLAYER
+========================= */
 
-.photo{
-    background:white;
-    padding:5px;
-
-    border:1px solid #888;
-
-    box-shadow:
-        2px 2px 4px rgba(0,0,0,.3);
-
-    transition:.15s;
-}
-
-.photo:hover{
-    transform:translateY(-5px) rotate(-1deg);
-    box-shadow:5px 7px 10px rgba(0,0,0,.4);
-}
-
-.photo img{
-    width:100%;
-    aspect-ratio:1;
-    object-fit:cover;
-    display:block;
-}
-
-.photo small{
-    display:block;
-    padding:5px 2px 2px;
-    font-size:10px;
-    font-weight:bold;
-}
-
-/* PLAYER */
 .player{
-    background:linear-gradient(#292929,#090909);
-    border:3px solid #555;
-    box-shadow:inset 0 1px #999;
-    padding:15px;
+    position:relative;
+
+    overflow:hidden;
+
+    padding:18px;
+
     color:white;
-}
-
-.track{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.cd{
-    width:65px;
-    height:65px;
-    border-radius:50%;
 
     background:
-        repeating-radial-gradient(
-            circle,
-            #777 0px,
-            #aaa 2px,
-            #333 4px,
-            #111 6px
+        linear-gradient(
+            145deg,
+            #3e3e3e 0%,
+            #181818 45%,
+            #050505 100%
         );
 
+    border:2px solid #777;
+
+    border-radius:5px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.45),
+        inset 0 -2px 0 #000,
+        4px 5px 0 rgba(0,0,0,.35);
+}
+
+.player:before{
+    content:"";
+
+    position:absolute;
+
+    top:-55px;
+    left:-20%;
+
+    width:140%;
+    height:100px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.22),
+            transparent
+        );
+
+    transform:rotate(-5deg);
+
+    pointer-events:none;
+}
+
+.player-label{
+    position:absolute;
+
+    top:8px;
+    right:10px;
+
+    font-family:"Courier New",monospace;
+
+    font-size:8px;
+
+    color:#72d2ff;
+
+    letter-spacing:1px;
+}
+
+.player-top{
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.player-cover{
+    width:105px;
+    height:105px;
+
+    padding:5px;
+
+    background:#111;
+
     border:2px solid #aaa;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.8);
+
+    transform:rotate(-2deg);
+
+    flex-shrink:0;
+}
+
+.player-cover img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
 
 .track-info{
     flex:1;
 }
 
-.track-info strong{
-    display:block;
-    font-size:14px;
+.track-title{
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+
+    font-size:24px;
+
+    letter-spacing:.5px;
+
+    color:white;
+
+    text-shadow:
+        2px 2px 0 #000,
+        3px 3px 0 #146b9b;
 }
 
-.track-info small{
-    color:#aaa;
+.track-sub{
+    margin-top:5px;
+
+    color:#8bdcff;
+
+    font-family:"Courier New",monospace;
+
+    font-size:10px;
 }
+
+/* =========================
+   EQUALIZER
+========================= */
+
+.equalizer{
+    display:flex;
+
+    align-items:end;
+
+    gap:3px;
+
+    height:35px;
+
+    margin-top:13px;
+
+    padding:5px;
+
+    background:#050505;
+
+    border:1px solid #555;
+}
+
+.equalizer span{
+    display:block;
+
+    width:6px;
+
+    background:
+        linear-gradient(
+            #8de4ff,
+            #1577a7
+        );
+
+    box-shadow:
+        0 0 4px rgba(82,201,255,.7);
+
+    animation:
+        eq .7s ease-in-out infinite alternate;
+}
+
+.equalizer span:nth-child(1){
+    height:10px;
+}
+
+.equalizer span:nth-child(2){
+    height:20px;
+    animation-delay:.1s;
+}
+
+.equalizer span:nth-child(3){
+    height:28px;
+    animation-delay:.2s;
+}
+
+.equalizer span:nth-child(4){
+    height:17px;
+    animation-delay:.3s;
+}
+
+.equalizer span:nth-child(5){
+    height:25px;
+    animation-delay:.15s;
+}
+
+.equalizer span:nth-child(6){
+    height:12px;
+    animation-delay:.25s;
+}
+
+.equalizer span:nth-child(7){
+    height:30px;
+    animation-delay:.05s;
+}
+
+.equalizer span:nth-child(8){
+    height:19px;
+    animation-delay:.35s;
+}
+
+.equalizer span:nth-child(9){
+    height:26px;
+    animation-delay:.2s;
+}
+
+.equalizer span:nth-child(10){
+    height:14px;
+    animation-delay:.3s;
+}
+
+@keyframes eq{
+
+    from{
+        transform:scaleY(.45);
+    }
+
+    to{
+        transform:scaleY(1);
+    }
+
+}
+
+/* =========================
+   PLAYER SCREEN
+========================= */
+
+.player-screen{
+    margin-top:13px;
+
+    padding:8px;
+
+    background:#020b0d;
+
+    border:2px inset #777;
+
+    color:#5ee0ff;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+/* =========================
+   AUDIO
+========================= */
 
 audio{
     width:100%;
-    margin-top:14px;
+
+    margin-top:12px;
+
+    height:34px;
+
+    filter:
+        contrast(1.15)
+        brightness(.9);
 }
 
-.status{
-    font-family:"Courier New",monospace;
-    font-size:11px;
-    color:#42aaff;
+/* =========================
+   PLAYER BUTTONS
+========================= */
+
+.player-controls{
+    display:flex;
+
+    gap:6px;
+
+    margin-top:10px;
 }
 
-/* NEWS */
+.player-btn{
+    padding:6px 11px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            #666,
+            #222
+        );
+
+    border:1px solid #999;
+
+    border-top-color:#ccc;
+    border-left-color:#ccc;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        2px 2px 0 #000;
+}
+
+.player-btn:hover{
+    background:
+        linear-gradient(
+            #4ebbe9,
+            #12638b
+        );
+}
+
+.player-btn:active{
+    transform:
+        translate(2px,2px);
+
+    box-shadow:none;
+}
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+}
+
+.photo{
+    background:white;
+
+    padding:5px;
+
+    border:1px solid #8999a0;
+
+    box-shadow:
+        2px 3px 6px rgba(0,0,0,.25);
+
+    transition:.15s;
+}
+
+.photo:hover{
+    transform:
+        translateY(-6px)
+        rotate(-1deg);
+
+    box-shadow:
+        5px 9px 12px rgba(0,0,0,.3);
+}
+
+.photo img{
+    width:100%;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.photo small{
+    display:block;
+
+    padding:5px 2px 2px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:9px;
+}
+
+/* =========================
+   BLOG
+========================= */
+
 .news{
-    border-bottom:1px dotted #888;
     padding:10px 0;
+
+    border-bottom:
+        1px dotted #8197a2;
 }
 
 .news:last-child{
-    border-bottom:none;
+    border-bottom:0;
 }
 
 .news-date{
-    color:#176bc1;
+    color:#1476a8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
     font-size:10px;
-    font-weight:bold;
 }
 
 .news h3{
     margin:4px 0;
+
     font-size:14px;
 }
 
-/* ABOUT */
-.about-box{
-    font-size:13px;
-    line-height:1.6;
+.news p{
+    font-size:12px;
 }
 
-/* FOOTER */
+/* =========================
+   STATUS
+========================= */
+
+.statusbar{
+    margin-top:18px;
+
+    background:
+        linear-gradient(
+            #dce5e8,
+            #aabac1
+        );
+
+    border:1px solid #6c7f87;
+
+    padding:6px 9px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
+    margin-top:20px;
+
+    padding:18px;
+
     text-align:center;
-    padding:20px;
 
-    background:#111;
-    color:#aaa;
+    background:
+        rgba(255,255,255,.8);
 
-    border-top:3px solid #555;
+    border:2px solid white;
 
-    font-size:11px;
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.25);
+
+    font-size:10px;
+
+    color:#45606d;
 }
 
-.footer strong{
-    color:white;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* TASKBAR */
-.taskbar{
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
+@media(max-width:800px){
 
-    height:38px;
-    z-index:10000;
-
-    display:flex;
-    align-items:center;
-
-    background:linear-gradient(#3d92e5,#0757a9);
-    border-top:2px solid #72b9f2;
-
-    box-shadow:0 -2px 8px rgba(0,0,0,.5);
-}
-
-.start{
-    height:38px;
-    padding:0 18px;
-
-    display:flex;
-    align-items:center;
-    gap:7px;
-
-    color:white;
-    font-weight:bold;
-    font-style:italic;
-
-    background:linear-gradient(#68c15d,#25851d);
-
-    border-right:2px solid #125b0e;
-    border-radius:0 14px 14px 0;
-}
-
-.task{
-    margin-left:8px;
-    padding:7px 20px;
-
-    color:white;
-    font-size:11px;
-
-    background:rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.2);
-}
-
-/* MOBILE */
-@media(max-width:750px){
-
-    .desktop{
-        padding:10px;
-    }
-
-    .hero{
+    .header{
         grid-template-columns:1fr;
     }
 
-    .hero-photo{
-        height:280px;
+    .hero-image{
+        transform:none;
     }
 
     .grid{
         grid-template-columns:1fr;
     }
 
-    .photo-grid{
-        grid-template-columns:repeat(2,1fr);
+    .photos{
+        grid-template-columns:
+            repeat(2,1fr);
     }
+
 }
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:55px;
+    }
+
+    .photos{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .nav a{
+        flex:1 1 40%;
+        text-align:center;
+    }
+
+    .player-cover{
+        width:80px;
+        height:80px;
+    }
+
+    .track-title{
+        font-size:19px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<div class="desktop">
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
 
-    <!-- ICÔNES WINDOWS XP -->
-    <div class="desktop-icon">
-        <div class="icon">💻</div>
-        <span>My Computer</span>
+
+<!-- =========================
+     TOP
+========================= -->
+
+<div class="topbar">
+
+    ★ WELCOME 2 MY PAGE ★
+    // BEST VIEWED ON A COMPUTER
+    // EST. 2010
+
+</div>
+
+
+<!-- =========================
+     MOVING BANNER
+========================= -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>
+            ★ i be makin 2010 shi n i was born dat year lol
+        </span>
+
+        <span>
+            ♪ NEW BEATS UPLOADED
+        </span>
+
+        <span>
+            ★ OLD INTERNET FOREVER
+        </span>
+
+        <span>
+            📷 PICS // MUSIC // BLOG // ARCHIVE
+        </span>
+
+        <span>
+            ★ i be makin 2010 shi n i was born dat year lol
+        </span>
+
     </div>
 
-    <div class="desktop-icon">
-        <div class="icon">🗑️</div>
-        <span>Recycle Bin</span>
-    </div>
+</div>
 
-    <!-- FENÊTRE -->
-    <main class="window">
 
-        <div class="titlebar">
+<div class="wrapper">
 
-            <div class="title-left">
-                <span>🖥️</span>
-                <span>YOUNG MONEY — Internet Explorer</span>
-            </div>
 
-            <div class="window-buttons">
-                <span>−</span>
-                <span>□</span>
-                <span>×</span>
-            </div>
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+
+    <div>
+
+        <div class="logo">
+            2010<br>SHI
+        </div>
+
+
+        <div class="tagline">
+            i be makin 2010 shi n i was born dat year lol
+        </div>
+
+
+        <div class="socials">
+
+            <a
+                class="social"
+                href="https://www.tiktok.com/@ynw_shenzhen"
+                target="_blank"
+                rel="noopener"
+            >
+                TIKTOK
+            </a>
+
+            <a
+                class="social"
+                href="https://www.instagram.com/yopcshane"
+                target="_blank"
+                rel="noopener"
+            >
+                IG
+            </a>
+
+            <a
+                class="social"
+                href="https://www.youtube.com/@ynwshenzhen"
+                target="_blank"
+                rel="noopener"
+            >
+                YOUTUBE
+            </a>
+
+            <a
+                class="social"
+                href="https://soundcloud.com/shenzhen_made_this"
+                target="_blank"
+                rel="noopener"
+            >
+                SOUNDCLOUD
+            </a>
 
         </div>
 
-        <div class="content">
+    </div>
 
-            <!-- MENU -->
-            <nav class="navbar">
-                <a href="#home">HOME</a>
-                <a href="#music">MUSIC</a>
-                <a href="#photos">PHOTOS</a>
-                <a href="#news">NEWS</a>
-                <a href="#about">ABOUT</a>
-            </nav>
 
-            <!-- HERO -->
-            <section id="home" class="hero">
+    <div class="hero-image">
 
-                <div class="hero-text">
+        <img
+            src="assets/lil%20wayne.jfif"
+            alt="Lil Wayne"
+        >
 
-                    <h1>YOUNG<br>MONEY</h1>
+    </div>
 
-                    <h2>THE 2010 ARCHIVE</h2>
 
-                    <p>
-                        Welcome to the old internet.
-                        Music, photos, news and memories
-                        from the golden era.
-                    </p>
+</header>
 
-                    <a class="xp-button" href="#music">
-                        ▶ ENTER MUSIC
-                    </a>
 
-                    <a class="xp-button" href="#photos">
-                        📷 VIEW PHOTOS
-                    </a>
+<!-- =========================
+     NAV
+========================= -->
 
-                </div>
+<nav class="nav">
 
-                <div class="hero-photo">
+    <a href="#home">HOME</a>
 
-                    <!-- LIL WAYNE -->
-                    <img
-                        src="assets/lil%20wayne.jfif"
-                        alt="Lil Wayne"
-                    >
+    <a href="#music">BEATS</a>
 
-                </div>
+    <a href="#photos">PICS</a>
 
-            </section>
+    <a href="#news">BLOG</a>
 
-            <br>
+    <a href="#about">BIO</a>
 
-            <!-- MUSIC + NEWS -->
-            <div class="grid">
+    <a href="#socials">SOCIALS</a>
 
-                <section id="music" class="panel">
+</nav>
 
-                    <div class="panel-title">
-                        ♪ WINDOWS MEDIA PLAYER
-                    </div>
 
-                    <div class="panel-body">
+<!-- =========================
+     HOME
+========================= -->
 
-                        <div class="player">
+<section class="window" id="home">
 
-                            <div class="track">
 
-                                <div class="cd"></div>
+    <div class="titlebar">
 
-                                <div class="track-info">
-                                    <strong>MY BEAT — 2010 EDIT</strong>
-                                    <small>Young Money Archive</small>
-                                </div>
+        <span>
+            🌐 2010 SHI — Internet Explorer
+        </span>
 
-                            </div>
+        <div class="title-buttons">
 
-                            <div class="status">
-                                STATUS: READY
-                            </div>
+            <span>−</span>
+            <span>□</span>
+            <span>×</span>
 
-                            <!-- TON BEAT -->
-                            <audio controls>
-                                <source
-                                    src="assets/beat.mp3"
-                                    type="audio/mpeg"
-                                >
-                            </audio>
+        </div>
 
-                        </div>
+    </div>
 
-                    </div>
 
-                </section>
+    <div class="window-content">
 
-                <section id="news" class="panel">
 
-                    <div class="panel-title">
-                        ★ LATEST NEWS
-                    </div>
+        <div class="grid">
 
-                    <div class="panel-body">
 
-                        <div class="news">
-                            <div class="news-date">08/20/2010</div>
-                            <h3>NEW MUSIC ONLINE</h3>
-                            <p>
-                                New track uploaded to the archive.
-                            </p>
-                        </div>
+            <!-- MUSIC -->
 
-                        <div class="news">
-                            <div class="news-date">07/15/2010</div>
-                            <h3>NEW PHOTOS</h3>
-                            <p>
-                                Fresh pictures added to the gallery.
-                            </p>
-                        </div>
+            <section class="panel" id="music">
 
-                        <div class="news">
-                            <div class="news-date">06/01/2010</div>
-                            <h3>WELCOME TO THE SITE</h3>
-                            <p>
-                                Welcome to the old school internet.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
-
-            <br>
-
-            <!-- GALERIE -->
-            <section id="photos" class="panel">
 
                 <div class="panel-title">
-                    📷 PHOTO GALLERY — 2009 / 2010
+                    ♪ NOW PLAYING // MP3 PLAYER
                 </div>
+
 
                 <div class="panel-body">
 
-                    <div class="photo-grid">
 
-                        <!-- LIL WAYNE -->
-                        <div class="photo">
-                            <img
-                                src="assets/lil%20wayne.jfif"
-                                alt="Lil Wayne"
-                            >
-                            <small>LIL WAYNE.JFIF</small>
+                    <div class="player">
+
+
+                        <div class="player-label">
+                            MP3 // 2010 EDITION
                         </div>
 
-                        <!-- JHENE AIKO -->
-                        <div class="photo">
-                            <img
-                                src="assets/jhene%20aiko.jfif"
-                                alt="Jhene Aiko"
-                            >
-                            <small>JHENE AIKO.JFIF</small>
+
+                        <div class="player-top">
+
+
+                            <div class="player-cover">
+
+                                <img
+                                    src="assets/swagg.jfif"
+                                    alt="2010 SHI"
+                                >
+
+                            </div>
+
+
+                            <div class="track-info">
+
+
+                                <div
+                                    class="track-title"
+                                    id="trackTitle"
+                                >
+                                    BEAT 01
+                                </div>
+
+
+                                <div class="track-sub">
+                                    prod. by shenzhen // 2010 type shi
+                                </div>
+
+
+                                <div class="equalizer">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+                            </div>
+
+
                         </div>
 
-                        <!-- RAP ERA -->
-                        <div class="photo">
-                            <img
-                                src="assets/rap%20era.jfif"
-                                alt="Rap Era"
-                            >
-                            <small>RAP ERA.JFIF</small>
+
+                        <div class="player-screen">
+
+                            <span id="status">
+                                ■ READY
+                            </span>
+
+                            <span id="trackNumber">
+                                01 / 07
+                            </span>
+
                         </div>
 
-                        <!-- SWAGG -->
-                        <div class="photo">
-                            <img
-                                src="assets/swagg.jfif"
-                                alt="Swagg"
+
+                        <audio
+                            id="audioPlayer"
+                            controls
+                        >
+
+                            <source
+                                src="assets/beat01.mp3"
+                                type="audio/mpeg"
                             >
-                            <small>SWAGG.JFIF</small>
+
+                            Your browser does not support audio.
+
+                        </audio>
+
+
+                        <div class="player-controls">
+
+                            <button
+                                class="player-btn"
+                                onclick="previousBeat()"
+                            >
+                                ◀◀
+                            </button>
+
+
+                            <button
+                                class="player-btn"
+                                onclick="playBeat()"
+                            >
+                                ▶ PLAY
+                            </button>
+
+
+                            <button
+                                class="player-btn"
+                                onclick="stopBeat()"
+                            >
+                                ■ STOP
+                            </button>
+
+
+                            <button
+                                class="player-btn"
+                                onclick="nextBeat()"
+                            >
+                                ▶▶
+                            </button>
+
                         </div>
+
 
                     </div>
 
+
                 </div>
+
 
             </section>
 
-            <br>
 
-            <!-- ABOUT -->
-            <section id="about" class="panel">
+            <!-- BLOG -->
+
+            <section class="panel" id="news">
+
 
                 <div class="panel-title">
-                    ℹ️ SYSTEM INFORMATION
+                    ★ BLOG // RECENT SHI
                 </div>
 
-                <div class="panel-body about-box">
 
-                    <p>
-                        <strong>YOUNG MONEY ARCHIVE</strong>
-                    </p>
+                <div class="panel-body">
 
-                    <p>
-                        Welcome to a piece of the old internet.
-                        This website recreates the feeling of
-                        the 2009–2011 web era.
-                    </p>
 
-                    <p>
-                        Best viewed on a computer running
-                        Windows XP with Internet Explorer.
-                    </p>
+                    <div class="news">
 
-                    <a class="xp-button" href="#home">
-                        ↑ BACK TO TOP
-                    </a>
+                        <div class="news-date">
+                            08.20.10
+                        </div>
+
+                        <h3>
+                            NEW BEAT UP
+                        </h3>
+
+                        <p>
+                            made some old sounding shi today lol.
+                        </p>
+
+                    </div>
+
+
+                    <div class="news">
+
+                        <div class="news-date">
+                            08.14.10
+                        </div>
+
+                        <h3>
+                            NEW PICS
+                        </h3>
+
+                        <p>
+                            added some stuff 2 the archive.
+                        </p>
+
+                    </div>
+
+
+                    <div class="news">
+
+                        <div class="news-date">
+                            08.01.10
+                        </div>
+
+                        <h3>
+                            WELCOME 2 MY PAGE
+                        </h3>
+
+                        <p>
+                            u found the old internet.
+                        </p>
+
+                    </div>
+
 
                 </div>
+
 
             </section>
 
+
         </div>
 
-        <div class="footer">
-            <strong>YOUNG MONEY // 2010</strong><br>
-            Best viewed at 1024 × 768 · Internet Explorer recommended<br>
-            © Old School Archive
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     PHOTOS
+========================= -->
+
+<section class="window" id="photos">
+
+
+    <div class="titlebar">
+
+        <span>
+            📷 MY PICS — PHOTO ARCHIVE
+        </span>
+
+
+        <div class="title-buttons">
+
+            <span>−</span>
+            <span>□</span>
+            <span>×</span>
+
         </div>
 
-    </main>
+    </div>
+
+
+    <div class="window-content">
+
+
+        <div class="photos">
+
+
+            <div class="photo">
+
+                <img
+                    src="assets/lil%20wayne.jfif"
+                    alt="Lil Wayne"
+                >
+
+                <small>
+                    lil wayne.jfif
+                </small>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="assets/jhene%20aiko.jfif"
+                    alt="Jhene Aiko"
+                >
+
+                <small>
+                    jhene aiko.jfif
+                </small>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="assets/rap%20era.jfif"
+                    alt="Rap Era"
+                >
+
+                <small>
+                    rap era.jfif
+                </small>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="assets/swagg.jfif"
+                    alt="Swagg"
+                >
+
+                <small>
+                    swagg.jfif
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     BIO
+========================= -->
+
+<section class="window" id="about">
+
+
+    <div class="titlebar">
+
+        <span>
+            ℹ️ BIO.TXT — NOTEPAD
+        </span>
+
+
+        <div class="title-buttons">
+
+            <span>−</span>
+            <span>□</span>
+            <span>×</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+
+        <div class="panel">
+
+
+            <div class="panel-title">
+                ABOUT ME // QUICK BIO
+            </div>
+
+
+            <div class="panel-body">
+
+                <p>
+                    yo.
+                </p>
+
+                <p>
+                    i be makin 2010 shi n i was born dat year lol.
+                </p>
+
+                <p>
+                    old internet. old sounds. new shi.
+                </p>
+
+                <p>
+                    stay tuned 4 more beats + random pics.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     SOCIALS
+========================= -->
+
+<section class="window" id="socials">
+
+
+    <div class="titlebar">
+
+        <span>
+            🔗 SOCIALS — HIT ME UP
+        </span>
+
+
+        <div class="title-buttons">
+
+            <span>−</span>
+            <span>□</span>
+            <span>×</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="window-content">
+
+
+        <div class="panel">
+
+
+            <div class="panel-title">
+                FIND ME ONLINE // TAP IN
+            </div>
+
+
+            <div class="panel-body">
+
+                <p>
+                    follow / listen / tap in ↓
+                </p>
+
+
+                <div class="socials">
+
+
+                    <a
+                        class="social"
+                        href="https://www.tiktok.com/@ynw_shenzhen"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        TIKTOK // @ynw_shenzhen
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://www.instagram.com/yopcshane"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        IG // @yopcshane
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://www.youtube.com/@ynwshenzhen"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        YOUTUBE // @ynwshenzhen
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://soundcloud.com/shenzhen_made_this"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        SOUNDCLOUD // shenzhen_made_this
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     STATUS
+========================= -->
+
+<div class="statusbar">
+
+    <span>
+        Internet Explorer // Connected
+    </span>
+
+    <span>
+        ONLINE ●
+    </span>
 
 </div>
 
-<!-- TASKBAR WINDOWS XP -->
-<div class="taskbar">
 
-    <div class="start">
-        🪟 start
-    </div>
+<!-- =========================
+     FOOTER
+========================= -->
 
-    <div class="task">
-        🌐 YOUNG MONEY — Internet Explorer
-    </div>
+<footer class="footer">
+
+    <strong>
+        2010 SHI
+    </strong>
+
+    <br><br>
+
+    i be makin 2010 shi n i was born dat year lol
+
+    <br><br>
+
+    best viewed on a computer // old internet forever
+
+</footer>
+
 
 </div>
+
+
+<!-- =========================
+     MUSIC PLAYER SCRIPT
+========================= -->
+
+<script>
+
+const beats = [
+    "beat01.mp3",
+    "beat02.mp3",
+    "beat03.mp3",
+    "beat04.mp3",
+    "beat05.mp3",
+    "beat06.mp3",
+    "beat07.mp3"
+];
+
+let currentBeat = 0;
+
+const audio =
+    document.getElementById("audioPlayer");
+
+const title =
+    document.getElementById("trackTitle");
+
+const number =
+    document.getElementById("trackNumber");
+
+const status =
+    document.getElementById("status");
+
+
+function loadBeat(){
+
+    audio.src =
+        "assets/" + beats[currentBeat];
+
+    title.textContent =
+        "BEAT " +
+        String(currentBeat + 1).padStart(2,"0");
+
+    number.textContent =
+        String(currentBeat + 1).padStart(2,"0")
+        + " / 07";
+
+}
+
+
+function playBeat(){
+
+    audio.play();
+
+    status.textContent =
+        "▶ PLAYING";
+
+}
+
+
+function stopBeat(){
+
+    audio.pause();
+
+    audio.currentTime = 0;
+
+    status.textContent =
+        "■ STOPPED";
+
+}
+
+
+function nextBeat(){
+
+    currentBeat++;
+
+    if(currentBeat >= beats.length){
+
+        currentBeat = 0;
+
+    }
+
+    loadBeat();
+
+    audio.play();
+
+    status.textContent =
+        "▶ PLAYING";
+
+}
+
+
+function previousBeat(){
+
+    currentBeat--;
+
+    if(currentBeat < 0){
+
+        currentBeat =
+            beats.length - 1;
+
+    }
+
+    loadBeat();
+
+    audio.play();
+
+    status.textContent =
+        "▶ PLAYING";
+
+}
+
+
+/* Auto next beat */
+
+audio.addEventListener(
+    "ended",
+    function(){
+
+        nextBeat();
+
+    }
+);
+
+
+/* Native player controls */
+
+audio.addEventListener(
+    "play",
+    function(){
+
+        status.textContent =
+            "▶ PLAYING";
+
+    }
+);
+
+
+audio.addEventListener(
+    "pause",
+    function(){
+
+        if(audio.currentTime !== 0){
+
+            status.textContent =
+                "Ⅱ PAUSED";
+
+        }
+
+    }
+);
+
+
+/* Load first beat */
+
+loadBeat();
+
+</script>
+
 
 </body>
 </html>
-```
