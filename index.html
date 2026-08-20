@@ -2,121 +2,107 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>2010 SHI // OLD INTERNET</title>
+<title>SHENZHEN // 2010 SHI</title>
 
 <style>
 
-/* =========================================
-   RESET
-========================================= */
+/* ==============================
+   BASE
+============================== */
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    margin:0;
-    min-height:100vh;
+body {
+    margin: 0;
+    min-height: 100vh;
 
-    font-family:Tahoma,Arial,sans-serif;
+    font-family: Tahoma, Arial, sans-serif;
 
-    color:#17202a;
-
-    overflow-x:hidden;
+    color: #17202a;
 
     background:
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(255,255,255,.95),
-            transparent 16%
-        ),
-        radial-gradient(
-            circle at 85% 25%,
-            rgba(255,255,255,.7),
-            transparent 14%
-        ),
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.95), transparent 16%),
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,.7), transparent 15%),
         linear-gradient(
             180deg,
             #65c2f4 0%,
-            #bdeafb 42%,
-            #edfcff 61%,
-            #78ca70 62%,
-            #287d38 100%
+            #c8f0ff 43%,
+            #effcff 60%,
+            #79ca72 61%,
+            #2c803b 100%
         );
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
 }
 
 
-/* =========================================
-   FRUTIGER AERO BUBBLES
-========================================= */
+/* ==============================
+   AERO BUBBLES
+============================== */
 
-.bubble{
-    position:fixed;
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    z-index:-1;
+.bubble {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
 
     background:
         radial-gradient(
             circle at 30% 25%,
             white,
-            rgba(255,255,255,.5) 15%,
+            rgba(255,255,255,.55) 15%,
             rgba(255,255,255,.1) 45%,
             transparent 70%
         );
 
-    opacity:.55;
+    opacity: .55;
 }
 
-.b1{
-    width:140px;
-    height:140px;
-
-    left:3%;
-    top:28%;
+.b1 {
+    width: 150px;
+    height: 150px;
+    left: 3%;
+    top: 25%;
 }
 
-.b2{
-    width:75px;
-    height:75px;
-
-    right:8%;
-    top:18%;
+.b2 {
+    width: 80px;
+    height: 80px;
+    right: 7%;
+    top: 15%;
 }
 
-.b3{
-    width:180px;
-    height:180px;
-
-    right:1%;
-    bottom:10%;
+.b3 {
+    width: 190px;
+    height: 190px;
+    right: 1%;
+    bottom: 8%;
 }
 
 
-/* =========================================
+/* ==============================
    TOP BAR
-========================================= */
+============================== */
 
-.topbar{
+.topbar {
+    height: 34px;
 
-    height:34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background:
         linear-gradient(
@@ -125,100 +111,82 @@ body{
             #9eb8c7
         );
 
-    border-bottom:2px solid #66899b;
+    border-bottom: 2px solid #66899b;
 
     box-shadow:
         0 2px 8px rgba(0,0,0,.35);
 
-    font-size:11px;
-
-    font-weight:bold;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 
-/* =========================================
-   MOVING BANNER
-========================================= */
+/* ==============================
+   MARQUEE
+============================== */
 
-.marquee{
+.marquee {
+    height: 32px;
+    overflow: hidden;
 
-    overflow:hidden;
+    display: flex;
+    align-items: center;
 
-    height:32px;
+    white-space: nowrap;
 
-    display:flex;
-
-    align-items:center;
-
-    white-space:nowrap;
-
-    color:white;
+    color: white;
 
     background:
-        linear-gradient(
-            #222,
-            #050505
-        );
+        linear-gradient(#222,#050505);
 
-    border-top:2px solid #444;
-
-    border-bottom:2px solid #111;
+    border-top: 2px solid #444;
+    border-bottom: 2px solid #111;
 }
 
-.marquee-track{
+.marquee-track {
+    display: inline-block;
 
-    display:inline-block;
-
-    padding-left:100%;
+    padding-left: 100%;
 
     animation:
-        scroll 22s linear infinite;
+        scroll 23s linear infinite;
 
-    font-family:
-        "Courier New",
-        monospace;
+    font-family: "Courier New", monospace;
 
-    font-size:12px;
-
-    letter-spacing:1px;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
-.marquee-track span{
-
-    margin-right:100px;
+.marquee-track span {
+    margin-right: 100px;
 }
 
-@keyframes scroll{
-
-    from{
-        transform:translateX(0);
+@keyframes scroll {
+    from {
+        transform: translateX(0);
     }
 
-    to{
-        transform:translateX(-100%);
+    to {
+        transform: translateX(-100%);
     }
-
 }
 
 
-/* =========================================
-   MAIN
-========================================= */
+/* ==============================
+   WRAPPER
+============================== */
 
-.wrapper{
-
-    width:min(1100px,94%);
-
-    margin:30px auto 80px;
+.wrapper {
+    width: min(1100px, 94%);
+    margin: 30px auto 80px;
 }
 
 
-/* =========================================
+/* ==============================
    HEADER
-========================================= */
+============================== */
 
-.header{
-
+.header {
     background:
         linear-gradient(
             135deg,
@@ -226,26 +194,23 @@ body{
             rgba(225,246,255,.9)
         );
 
-    border:2px solid white;
-
-    border-radius:8px;
+    border: 2px solid white;
+    border-radius: 8px;
 
     box-shadow:
         0 5px 18px rgba(0,0,0,.35),
         inset 0 0 0 1px #74b9d5;
 
-    padding:28px;
-
-    text-align:center;
+    padding: 28px;
+    text-align: center;
 }
 
 
-/* =========================================
+/* ==============================
    LOGO
-========================================= */
+============================== */
 
-.logo{
-
+.logo {
     font-family:
         Impact,
         "Arial Black",
@@ -254,11 +219,11 @@ body{
     font-size:
         clamp(60px,10vw,110px);
 
-    line-height:.78;
+    line-height: .78;
 
-    letter-spacing:-5px;
+    letter-spacing: -5px;
 
-    color:white;
+    color: white;
 
     text-shadow:
         4px 4px 0 #111,
@@ -267,164 +232,134 @@ body{
 }
 
 
-/* =========================================
+/* ==============================
    TAGLINE
-========================================= */
+============================== */
 
-.tagline{
+.tagline {
+    margin-top: 25px;
 
-    margin-top:25px;
+    display: inline-block;
 
-    display:inline-block;
-
-    padding:9px 14px;
+    padding: 9px 14px;
 
     background:
         rgba(255,255,255,.8);
 
-    border:1px solid #9bb9c7;
+    border: 1px solid #9bb9c7;
 
     box-shadow:
         inset 0 1px white,
         2px 2px 0 rgba(0,0,0,.15);
 
-    font-family:
-        "Courier New",
-        monospace;
+    font-family: "Courier New", monospace;
 
-    font-size:15px;
+    font-size: 15px;
+    font-weight: bold;
 
-    font-weight:bold;
-
-    color:#24485c;
+    color: #24485c;
 }
 
 
-/* =========================================
+/* ==============================
    SOCIALS
-========================================= */
+============================== */
 
-.socials{
+.socials {
+    display: flex;
+    flex-wrap: wrap;
 
-    display:flex;
+    justify-content: center;
 
-    flex-wrap:wrap;
+    gap: 8px;
 
-    justify-content:center;
-
-    gap:8px;
-
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-.social{
+.social {
+    display: inline-block;
 
-    display:inline-block;
+    padding: 8px 14px;
 
-    padding:8px 14px;
+    color: white;
 
-    color:white;
+    text-decoration: none;
 
-    text-decoration:none;
-
-    font-weight:bold;
-
-    font-size:11px;
+    font-weight: bold;
+    font-size: 11px;
 
     background:
-        linear-gradient(
-            #555,
-            #111
-        );
+        linear-gradient(#555,#111);
 
-    border:2px solid #777;
+    border: 2px solid #777;
 
-    border-top-color:#aaa;
+    border-top-color: #aaa;
+    border-left-color: #aaa;
 
-    border-left-color:#aaa;
+    box-shadow: 2px 2px 0 #333;
 
-    box-shadow:
-        2px 2px 0 #333;
-
-    transition:.15s;
+    transition: .15s;
 }
 
-.social:hover{
-
+.social:hover {
     background:
-        linear-gradient(
-            #49b9ef,
-            #146b9b
-        );
+        linear-gradient(#49b9ef,#146b9b);
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
-/* =========================================
+/* ==============================
    NAV
-========================================= */
+============================== */
 
-.nav{
+.nav {
+    margin-top: 18px;
 
-    margin-top:18px;
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     background:
-        linear-gradient(
-            #f8ffff,
-            #b8d7e7
-        );
+        linear-gradient(#f8ffff,#b8d7e7);
 
-    border:2px solid white;
+    border: 2px solid white;
 
     box-shadow:
         0 3px 10px rgba(0,0,0,.25);
 
-    padding:7px;
+    padding: 7px;
 }
 
-.nav a{
+.nav a {
+    color: #123f59;
 
-    color:#123f59;
+    text-decoration: none;
 
-    text-decoration:none;
+    font-weight: bold;
+    font-size: 12px;
 
-    font-weight:bold;
+    padding: 9px 18px;
 
-    font-size:12px;
-
-    padding:9px 18px;
-
-    border-right:
-        1px solid #91acbb;
+    border-right: 1px solid #91acbb;
 }
 
-.nav a:hover{
-
-    background:white;
-
-    color:#1683bd;
+.nav a:hover {
+    background: white;
+    color: #1683bd;
 }
 
 
-/* =========================================
+/* ==============================
    XP WINDOW
-========================================= */
+============================== */
 
-.window{
+.window {
+    margin-top: 20px;
 
-    margin-top:20px;
+    background: #ece9d8;
 
-    background:#ece9d8;
-
-    border:2px solid #1767b0;
+    border: 2px solid #1767b0;
 
     border-radius:
         7px 7px 2px 2px;
@@ -433,23 +368,19 @@ body{
         5px 7px 14px rgba(0,0,0,.35);
 }
 
-.titlebar{
+.titlebar {
+    height: 31px;
 
-    height:31px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    display:flex;
+    padding: 4px 7px;
 
-    align-items:center;
+    color: white;
 
-    justify-content:space-between;
-
-    padding:4px 7px;
-
-    color:white;
-
-    font-weight:bold;
-
-    font-size:12px;
+    font-weight: bold;
+    font-size: 12px;
 
     background:
         linear-gradient(
@@ -458,57 +389,45 @@ body{
             #084d94
         );
 
-    text-shadow:
-        1px 1px #174c79;
+    text-shadow: 1px 1px #174c79;
 }
 
-.title-buttons{
-
-    display:flex;
-
-    gap:3px;
+.title-buttons {
+    display: flex;
+    gap: 3px;
 }
 
-.title-buttons span{
+.title-buttons span {
+    width: 20px;
+    height: 20px;
 
-    width:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    height:20px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#111;
+    color: #111;
 
     background:
-        linear-gradient(
-            #fff,
-            #b9c8d5
-        );
+        linear-gradient(#fff,#b9c8d5);
 
-    border:1px solid #164b79;
+    border: 1px solid #164b79;
 
-    border-radius:3px;
+    border-radius: 3px;
 }
 
-.window-content{
-
-    padding:18px;
+.window-content {
+    padding: 18px;
 }
 
 
-/* =========================================
-   INTRO
-========================================= */
+/* ==============================
+   STORE HERO
+============================== */
 
-.intro{
+.store-hero {
+    padding: 28px;
 
-    text-align:center;
-
-    padding:25px;
+    text-align: center;
 
     background:
         linear-gradient(
@@ -516,57 +435,320 @@ body{
             #edf9fd
         );
 
-    border:1px solid #8fa8b5;
+    border: 1px solid #8fa8b5;
 
     box-shadow:
         inset 1px 1px white,
         3px 3px rgba(0,0,0,.15);
 }
 
-.intro h2{
-
-    margin:0 0 10px;
+.store-hero h1 {
+    margin: 0;
 
     font-family:
         Impact,
         "Arial Black",
         sans-serif;
 
-    font-size:30px;
+    font-size: 38px;
 
-    letter-spacing:1px;
-
-    color:#245a72;
+    color: #245a72;
 
     text-shadow:
         2px 2px white;
 }
 
-.intro p{
+.store-hero p {
+    font-family:
+        "Courier New",
+        monospace;
 
-    margin:8px 0;
+    font-size: 12px;
+}
+
+
+/* ==============================
+   STORE STATUS
+============================== */
+
+.store-status {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.status-pill {
+    padding: 6px 12px;
+
+    color: white;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size:12px;
+    font-size: 10px;
+    font-weight: bold;
+
+    background:
+        linear-gradient(#555,#151515);
+
+    border: 1px solid #888;
+
+    box-shadow:
+        2px 2px 0 #222;
 }
 
 
-/* =========================================
-   MUSIC PLAYER
-========================================= */
+/* ==============================
+   BEAT STORE
+============================== */
 
-.player{
+.beat-store {
+    margin-top: 18px;
 
-    position:relative;
+    display: grid;
 
-    overflow:hidden;
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
 
-    padding:20px;
+    gap: 14px;
+}
 
-    color:white;
+
+/* ==============================
+   BEAT CARD
+============================== */
+
+.beat-card {
+    background:
+        linear-gradient(
+            #ffffff,
+            #e9f5f8
+        );
+
+    border: 1px solid #8aa7b4;
+
+    box-shadow:
+        3px 4px 0 rgba(0,0,0,.2);
+
+    padding: 14px;
+
+    transition: .15s;
+}
+
+.beat-card:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        4px 6px 0 rgba(0,0,0,.25);
+}
+
+
+/* ==============================
+   CARD HEADER
+============================== */
+
+.beat-card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.beat-number {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    color: #176b91;
+}
+
+.beat-name {
+    margin: 2px 0 0;
+
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+
+    font-size: 25px;
+
+    color: #222;
+}
+
+.beat-type {
+    padding: 5px 8px;
+
+    font-size: 9px;
+
+    color: white;
+
+    background:
+        linear-gradient(#555,#111);
+
+    border: 1px solid #777;
+}
+
+
+/* ==============================
+   MINI PLAYER
+============================== */
+
+.mini-player {
+    background: #111;
+
+    border: 2px solid #555;
+
+    padding: 8px;
+
+    box-shadow:
+        inset 0 0 8px rgba(0,0,0,.8);
+}
+
+.mini-player audio {
+    width: 100%;
+    height: 34px;
+}
+
+
+/* ==============================
+   CARD INFO
+============================== */
+
+.beat-info {
+    margin-top: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.beat-license {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    color: #536d78;
+}
+
+.beat-price {
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+
+    font-size: 25px;
+
+    color: #176b91;
+}
+
+
+/* ==============================
+   BUY BUTTONS
+============================== */
+
+.buy-row {
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+.buy-btn {
+    flex: 1;
+
+    display: block;
+
+    padding: 10px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            #555,
+            #111
+        );
+
+    border: 2px solid #777;
+
+    border-top-color: #aaa;
+    border-left-color: #aaa;
+
+    box-shadow:
+        2px 2px 0 #222;
+
+    cursor: pointer;
+}
+
+.buy-btn:hover {
+    background:
+        linear-gradient(
+            #4db9e8,
+            #11658d
+        );
+}
+
+.buy-btn:active {
+    transform:
+        translate(2px,2px);
+
+    box-shadow: none;
+}
+
+.buy-btn.exclusive {
+    background:
+        linear-gradient(
+            #1b86b5,
+            #084e72
+        );
+}
+
+.buy-btn.exclusive:hover {
+    background:
+        linear-gradient(
+            #54c7f1,
+            #1477a0
+        );
+}
+
+
+/* ==============================
+   PLAYER
+============================== */
+
+.player {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    color: white;
 
     background:
         linear-gradient(
@@ -576,9 +758,9 @@ body{
             #050505 100%
         );
 
-    border:2px solid #777;
+    border: 2px solid #777;
 
-    border-radius:6px;
+    border-radius: 6px;
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,.45),
@@ -586,149 +768,96 @@ body{
         4px 5px 0 rgba(0,0,0,.35);
 }
 
-.player:before{
+.player-header {
+    display: flex;
 
-    content:"";
+    align-items: center;
 
-    position:absolute;
+    justify-content: space-between;
 
-    top:-70px;
+    border-bottom: 1px solid #555;
 
-    left:-15%;
+    padding-bottom: 12px;
 
-    width:130%;
-
-    height:120px;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,.22),
-            transparent
-        );
-
-    transform:
-        rotate(-5deg);
-
-    pointer-events:none;
+    margin-bottom: 15px;
 }
 
-
-/* PLAYER HEADER */
-
-.player-header{
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    border-bottom:
-        1px solid #555;
-
-    padding-bottom:12px;
-
-    margin-bottom:15px;
-}
-
-.player-brand{
-
+.player-brand {
     font-family:
         "Courier New",
         monospace;
 
-    font-size:10px;
+    font-size: 10px;
 
-    color:#74d9ff;
+    color: #74d9ff;
 
-    letter-spacing:2px;
+    letter-spacing: 2px;
 }
 
-.player-version{
-
-    font-size:9px;
-
-    color:#888;
+.player-version {
+    font-size: 9px;
+    color: #888;
 }
 
-
-/* TRACK */
-
-.track-info{
-
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
+.track-info {
+    text-align: center;
 }
 
-.track-title{
-
+.track-title {
     font-family:
         Impact,
         "Arial Black",
         sans-serif;
 
-    font-size:34px;
+    font-size: 34px;
 
-    letter-spacing:1px;
-
-    color:white;
+    color: white;
 
     text-shadow:
         2px 2px 0 #000,
         4px 4px 0 #146b9b;
 }
 
-.track-sub{
+.track-sub {
+    margin-top: 4px;
 
-    margin-top:4px;
-
-    color:#8bdcff;
+    color: #8bdcff;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size:10px;
+    font-size: 10px;
 }
 
 
-/* =========================================
+/* ==============================
    EQUALIZER
-========================================= */
+============================== */
 
-.equalizer{
+.equalizer {
+    display: flex;
 
-    display:flex;
+    align-items: end;
+    justify-content: center;
 
-    align-items:end;
+    gap: 4px;
 
-    justify-content:center;
+    height: 45px;
 
-    gap:4px;
+    margin-top: 18px;
 
-    height:45px;
+    padding: 6px;
 
-    margin-top:18px;
+    background: #050505;
 
-    padding:6px;
-
-    background:#050505;
-
-    border:1px solid #555;
+    border: 1px solid #555;
 }
 
-.equalizer span{
+.equalizer span {
+    display: block;
 
-    display:block;
-
-    width:8px;
+    width: 8px;
 
     background:
         linear-gradient(
@@ -740,128 +869,75 @@ body{
         eq .7s ease-in-out infinite alternate;
 }
 
-.equalizer span:nth-child(1){
-    height:10px;
-}
+.equalizer span:nth-child(1) { height: 10px; }
+.equalizer span:nth-child(2) { height: 20px; animation-delay: .1s; }
+.equalizer span:nth-child(3) { height: 32px; animation-delay: .2s; }
+.equalizer span:nth-child(4) { height: 18px; animation-delay: .3s; }
+.equalizer span:nth-child(5) { height: 28px; animation-delay: .15s; }
+.equalizer span:nth-child(6) { height: 14px; animation-delay: .25s; }
+.equalizer span:nth-child(7) { height: 35px; animation-delay: .05s; }
+.equalizer span:nth-child(8) { height: 22px; animation-delay: .35s; }
+.equalizer span:nth-child(9) { height: 30px; animation-delay: .2s; }
+.equalizer span:nth-child(10) { height: 16px; animation-delay: .3s; }
 
-.equalizer span:nth-child(2){
-    height:20px;
-    animation-delay:.1s;
-}
-
-.equalizer span:nth-child(3){
-    height:32px;
-    animation-delay:.2s;
-}
-
-.equalizer span:nth-child(4){
-    height:18px;
-    animation-delay:.3s;
-}
-
-.equalizer span:nth-child(5){
-    height:28px;
-    animation-delay:.15s;
-}
-
-.equalizer span:nth-child(6){
-    height:14px;
-    animation-delay:.25s;
-}
-
-.equalizer span:nth-child(7){
-    height:35px;
-    animation-delay:.05s;
-}
-
-.equalizer span:nth-child(8){
-    height:22px;
-    animation-delay:.35s;
-}
-
-.equalizer span:nth-child(9){
-    height:30px;
-    animation-delay:.2s;
-}
-
-.equalizer span:nth-child(10){
-    height:16px;
-    animation-delay:.3s;
-}
-
-@keyframes eq{
-
-    from{
-        transform:scaleY(.45);
+@keyframes eq {
+    from {
+        transform: scaleY(.45);
     }
 
-    to{
-        transform:scaleY(1);
+    to {
+        transform: scaleY(1);
     }
-
 }
 
 
-/* =========================================
+/* ==============================
    PLAYER SCREEN
-========================================= */
+============================== */
 
-.player-screen{
+.player-screen {
+    margin-top: 18px;
 
-    position:relative;
+    padding: 10px 12px;
 
-    z-index:2;
+    background: #020b0d;
 
-    margin-top:18px;
+    border: 2px inset #777;
 
-    padding:10px 12px;
-
-    background:#020b0d;
-
-    border:
-        2px inset #777;
-
-    color:#5ee0ff;
+    color: #5ee0ff;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size:11px;
+    font-size: 11px;
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
     box-shadow:
         inset 0 0 10px rgba(0,0,0,.8);
 }
 
 
-/* =========================================
+/* ==============================
    PROGRESS
-========================================= */
+============================== */
 
-.progress-wrap{
+.progress-wrap {
+    height: 8px;
 
-    position:relative;
+    margin-top: 12px;
 
-    z-index:2;
+    background: #050505;
 
-    height:8px;
-
-    margin-top:12px;
-
-    background:#050505;
-
-    border:1px solid #555;
+    border: 1px solid #555;
 }
 
-.progress{
-
-    height:100%;
-
-    width:0%;
+.progress {
+    height: 100%;
+    width: 0%;
 
     background:
         linear-gradient(
@@ -875,75 +951,45 @@ body{
 }
 
 
-/* =========================================
-   AUDIO
-========================================= */
+/* ==============================
+   PLAYER CONTROLS
+============================== */
 
-audio{
+.player-controls {
+    display: flex;
 
-    position:relative;
+    justify-content: center;
 
-    z-index:2;
+    flex-wrap: wrap;
 
-    width:100%;
+    gap: 7px;
 
-    height:38px;
-
-    margin-top:15px;
+    margin-top: 12px;
 }
 
+.player-btn {
+    padding: 8px 13px;
 
-/* =========================================
-   BUTTONS
-========================================= */
-
-.player-controls{
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:7px;
-
-    margin-top:12px;
-}
-
-.player-btn{
-
-    padding:8px 13px;
-
-    color:white;
+    color: white;
 
     background:
-        linear-gradient(
-            #666,
-            #222
-        );
+        linear-gradient(#666,#222);
 
-    border:1px solid #999;
+    border: 1px solid #999;
 
-    border-top-color:#ccc;
+    border-top-color: #ccc;
+    border-left-color: #ccc;
 
-    border-left-color:#ccc;
+    font-size: 10px;
+    font-weight: bold;
 
-    font-size:10px;
-
-    font-weight:bold;
-
-    cursor:pointer;
+    cursor: pointer;
 
     box-shadow:
         2px 2px 0 #000;
 }
 
-.player-btn:hover{
-
+.player-btn:hover {
     background:
         linear-gradient(
             #4ebbe9,
@@ -951,148 +997,22 @@ audio{
         );
 }
 
-.player-btn:active{
-
+.player-btn:active {
     transform:
         translate(2px,2px);
 
-    box-shadow:none;
+    box-shadow: none;
 }
 
 
-/* =========================================
-   BEAT LIST
-========================================= */
+/* ==============================
+   ABOUT
+============================== */
 
-.beat-list{
+.intro {
+    text-align: center;
 
-    margin-top:18px;
-
-    background:#080808;
-
-    border:1px solid #555;
-
-    padding:8px;
-}
-
-.beat-list-title{
-
-    color:#70d9ff;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:10px;
-
-    margin-bottom:7px;
-}
-
-.beat{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:8px 10px;
-
-    margin-top:3px;
-
-    color:#ddd;
-
-    background:
-        linear-gradient(
-            #303030,
-            #181818
-        );
-
-    border:1px solid #444;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:10px;
-
-    cursor:pointer;
-}
-
-.beat:hover{
-
-    background:
-        linear-gradient(
-            #28617b,
-            #123746
-        );
-
-    color:white;
-}
-
-.beat.active{
-
-    background:
-        linear-gradient(
-            #3e8db0,
-            #15506b
-        );
-
-    color:white;
-
-    border-color:#71cbea;
-}
-
-
-/* =========================================
-   BLOG
-========================================= */
-
-.news{
-
-    padding:12px 0;
-
-    border-bottom:
-        1px dotted #8197a2;
-}
-
-.news:last-child{
-    border-bottom:0;
-}
-
-.news-date{
-
-    color:#1476a8;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:10px;
-}
-
-.news h3{
-
-    margin:4px 0;
-
-    font-size:14px;
-}
-
-.news p{
-
-    font-size:12px;
-}
-
-
-/* =========================================
-   SOCIAL BOX
-========================================= */
-
-.social-box{
-
-    text-align:center;
-
-    padding:25px;
+    padding: 25px;
 
     background:
         linear-gradient(
@@ -1100,17 +1020,45 @@ audio{
             #edf9fd
         );
 
-    border:1px solid #8fa8b5;
+    border: 1px solid #8fa8b5;
+
+    box-shadow:
+        inset 1px 1px white,
+        3px 3px rgba(0,0,0,.15);
+}
+
+.intro h2 {
+    margin: 0 0 10px;
+
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+
+    font-size: 30px;
+
+    color: #245a72;
+
+    text-shadow: 2px 2px white;
+}
+
+.intro p {
+    margin: 8px 0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
 }
 
 
-/* =========================================
-   STATUS
-========================================= */
+/* ==============================
+   STATUS BAR
+============================== */
 
-.statusbar{
-
-    margin-top:18px;
+.statusbar {
+    margin-top: 18px;
 
     background:
         linear-gradient(
@@ -1118,85 +1066,80 @@ audio{
             #aabac1
         );
 
-    border:1px solid #6c7f87;
+    border: 1px solid #6c7f87;
 
-    padding:7px 10px;
+    padding: 7px 10px;
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size:10px;
+    font-size: 10px;
 }
 
 
-/* =========================================
+/* ==============================
    FOOTER
-========================================= */
+============================== */
 
-.footer{
+.footer {
+    margin-top: 20px;
 
-    margin-top:20px;
+    padding: 18px;
 
-    padding:18px;
-
-    text-align:center;
+    text-align: center;
 
     background:
         rgba(255,255,255,.8);
 
-    border:2px solid white;
+    border: 2px solid white;
 
     box-shadow:
         0 4px 12px rgba(0,0,0,.25);
 
-    font-size:10px;
+    font-size: 10px;
 
-    color:#45606d;
+    color: #45606d;
 }
 
 
-/* =========================================
+/* ==============================
    MOBILE
-========================================= */
+============================== */
 
-@media(max-width:650px){
+@media(max-width: 700px) {
 
-    .wrapper{
-        width:96%;
+    .wrapper {
+        width: 96%;
     }
 
-    .logo{
-        font-size:65px;
+    .beat-store {
+        grid-template-columns: 1fr;
     }
 
-    .tagline{
-        font-size:12px;
+    .logo {
+        font-size: 65px;
     }
 
-    .track-title{
-        font-size:28px;
+    .tagline {
+        font-size: 12px;
     }
 
-    .player{
-        padding:14px;
+    .track-title {
+        font-size: 28px;
     }
 
-    .nav a{
-        flex:
-            1 1 40%;
-
-        text-align:center;
+    .nav a {
+        flex: 1 1 40%;
+        text-align: center;
     }
-
 }
 
 </style>
-
 </head>
 
 
@@ -1208,13 +1151,13 @@ audio{
 <div class="bubble b3"></div>
 
 
-<!-- =========================================
-     TOP BAR
-========================================= -->
+<!-- ==============================
+     TOP
+============================== -->
 
 <div class="topbar">
 
-    ★ WELCOME 2 MY PAGE ★
+    ★ WELCOME 2 MY BEAT STORE ★
     &nbsp;&nbsp;//&nbsp;&nbsp;
     BEST VIEWED ON A COMPUTER
     &nbsp;&nbsp;//&nbsp;&nbsp;
@@ -1223,9 +1166,9 @@ audio{
 </div>
 
 
-<!-- =========================================
-     MOVING BANNER
-========================================= -->
+<!-- ==============================
+     MOVING TEXT
+============================== -->
 
 <div class="marquee">
 
@@ -1236,7 +1179,11 @@ audio{
         </span>
 
         <span>
-            ♪ NEW BEATS UPLOADED
+            ♪ BEATS AVAILABLE NOW
+        </span>
+
+        <span>
+            ★ LEASE / BUY / TAP IN
         </span>
 
         <span>
@@ -1244,11 +1191,7 @@ audio{
         </span>
 
         <span>
-            ★ TAP IN // LISTEN // FOLLOW
-        </span>
-
-        <span>
-            ★ i be makin 2010 shi n i was born dat year lol
+            ♪ NEW BEATS DROPPIN
         </span>
 
     </div>
@@ -1259,30 +1202,22 @@ audio{
 <div class="wrapper">
 
 
-<!-- =========================================
+<!-- ==============================
      HEADER
-========================================= -->
+============================== -->
 
 <header class="header">
 
-
     <div class="logo">
-
-        2010<br>
-        SHI
-
+        SHENZHEN
     </div>
 
-
     <div class="tagline">
-
         i be makin 2010 shi n i was born dat year lol
-
     </div>
 
 
     <div class="socials">
-
 
         <a
             class="social"
@@ -1293,7 +1228,6 @@ audio{
             TIKTOK
         </a>
 
-
         <a
             class="social"
             href="https://www.instagram.com/yopcshane"
@@ -1302,7 +1236,6 @@ audio{
         >
             IG
         </a>
-
 
         <a
             class="social"
@@ -1313,7 +1246,6 @@ audio{
             YOUTUBE
         </a>
 
-
         <a
             class="social"
             href="https://soundcloud.com/shenzhen_made_this"
@@ -1323,29 +1255,23 @@ audio{
             SOUNDCLOUD
         </a>
 
-
     </div>
-
 
 </header>
 
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+<!-- ==============================
+     NAV
+============================== -->
 
 <nav class="nav">
 
-    <a href="#home">
-        HOME
+    <a href="#store">
+        BEAT STORE
     </a>
 
-    <a href="#music">
-        BEATS
-    </a>
-
-    <a href="#news">
-        BLOG
+    <a href="#player">
+        PLAYER
     </a>
 
     <a href="#about">
@@ -1359,29 +1285,25 @@ audio{
 </nav>
 
 
-<!-- =========================================
-     HOME
-========================================= -->
+<!-- ==============================
+     STORE
+============================== -->
 
 <section
     class="window"
-    id="home"
+    id="store"
 >
-
 
     <div class="titlebar">
 
         <span>
-            🌐 2010 SHI — Internet Explorer
+            🛒 BEATSTORE.EXE — SHENZHEN PRODUCTIONS
         </span>
 
-
         <div class="title-buttons">
-
             <span>−</span>
             <span>□</span>
             <span>×</span>
-
         </div>
 
     </div>
@@ -1390,38 +1312,547 @@ audio{
     <div class="window-content">
 
 
-        <div class="intro">
+        <div class="store-hero">
 
-            <h2>
-                WELCOME 2 MY PAGE
-            </h2>
+            <h1>
+                BEATS 4 SALE
+            </h1>
 
             <p>
-                old sounds // new generation
+                2010 inspired production from the old internet.
             </p>
 
             <p>
-                i be makin 2010 shi n i was born dat year lol
+                preview it // pick your license // tap in
             </p>
+
+
+            <div class="store-status">
+
+                <div class="status-pill">
+                    ● 7 BEATS ONLINE
+                </div>
+
+                <div class="status-pill">
+                    ● MP3 PREVIEWS
+                </div>
+
+                <div class="status-pill">
+                    ● LEASE AVAILABLE
+                </div>
+
+            </div>
 
         </div>
 
 
-    </div>
+        <!-- ==========================
+             BEATS
+        =========================== -->
 
+        <div class="beat-store">
+
+
+            <!-- BEAT 01 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 01
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 01
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio
+                        controls
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="assets/beat/beat01.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a
+                        href="#"
+                        class="buy-btn"
+                    >
+                        LEASE $25
+                    </a>
+
+                    <a
+                        href="#"
+                        class="buy-btn exclusive"
+                    >
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEAT 02 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 02
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 02
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="assets/beat/beat02.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a href="#" class="buy-btn">
+                        LEASE $25
+                    </a>
+
+                    <a href="#" class="buy-btn exclusive">
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEAT 03 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 03
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 03
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="assets/beat/beat03.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a href="#" class="buy-btn">
+                        LEASE $25
+                    </a>
+
+                    <a href="#" class="buy-btn exclusive">
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEAT 04 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 04
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 04
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="assets/beat/beat04.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a href="#" class="buy-btn">
+                        LEASE $25
+                    </a>
+
+                    <a href="#" class="buy-btn exclusive">
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEAT 05 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 05
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 05
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="assets/beat/beat05.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a href="#" class="buy-btn">
+                        LEASE $25
+                    </a>
+
+                    <a href="#" class="buy-btn exclusive">
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEAT 06 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 06
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 06
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="assets/beat/beat06.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a href="#" class="buy-btn">
+                        LEASE $25
+                    </a>
+
+                    <a href="#" class="buy-btn exclusive">
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEAT 07 -->
+
+            <div class="beat-card">
+
+                <div class="beat-card-header">
+
+                    <div>
+
+                        <div class="beat-number">
+                            FILE 07
+                        </div>
+
+                        <div class="beat-name">
+                            BEAT 07
+                        </div>
+
+                    </div>
+
+                    <div class="beat-type">
+                        NEW
+                    </div>
+
+                </div>
+
+
+                <div class="mini-player">
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="assets/beat/beat07.mp3"
+                            type="audio/mpeg"
+                        >
+
+                    </audio>
+
+                </div>
+
+
+                <div class="beat-info">
+
+                    <div class="beat-license">
+                        MP3 PREVIEW<br>
+                        LEASE / EXCLUSIVE
+                    </div>
+
+                    <div class="beat-price">
+                        $25
+                    </div>
+
+                </div>
+
+
+                <div class="buy-row">
+
+                    <a href="#" class="buy-btn">
+                        LEASE $25
+                    </a>
+
+                    <a href="#" class="buy-btn exclusive">
+                        EXCLUSIVE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =========================================
-     MUSIC
-========================================= -->
+<!-- ==============================
+     MAIN PLAYER
+============================== -->
 
 <section
     class="window"
-    id="music"
+    id="player"
 >
-
 
     <div class="titlebar">
 
@@ -1429,13 +1860,10 @@ audio{
             ♪ MUSIC.EXE — MP3 PLAYER
         </span>
 
-
         <div class="title-buttons">
-
             <span>−</span>
             <span>□</span>
             <span>×</span>
-
         </div>
 
     </div>
@@ -1469,18 +1897,13 @@ audio{
                     BEAT 01
                 </div>
 
-
                 <div class="track-sub">
-
                     prod. by shenzhen //
                     2010 type shi
-
                 </div>
 
             </div>
 
-
-            <!-- EQUALIZER -->
 
             <div class="equalizer">
 
@@ -1498,8 +1921,6 @@ audio{
             </div>
 
 
-            <!-- SCREEN -->
-
             <div class="player-screen">
 
                 <span id="status">
@@ -1513,8 +1934,6 @@ audio{
             </div>
 
 
-            <!-- PROGRESS -->
-
             <div class="progress-wrap">
 
                 <div
@@ -1524,8 +1943,6 @@ audio{
 
             </div>
 
-
-            <!-- AUDIO -->
 
             <audio
                 id="audioPlayer"
@@ -1538,15 +1955,10 @@ audio{
                     type="audio/mpeg"
                 >
 
-                Your browser does not support MP3 audio.
-
             </audio>
 
 
-            <!-- CONTROLS -->
-
             <div class="player-controls">
-
 
                 <button
                     class="player-btn"
@@ -1555,14 +1967,12 @@ audio{
                     ◀◀ PREV
                 </button>
 
-
                 <button
                     class="player-btn"
                     onclick="playBeat()"
                 >
                     ▶ PLAY
                 </button>
-
 
                 <button
                     class="player-btn"
@@ -1571,14 +1981,12 @@ audio{
                     II PAUSE
                 </button>
 
-
                 <button
                     class="player-btn"
                     onclick="stopBeat()"
                 >
                     ■ STOP
                 </button>
-
 
                 <button
                     class="player-btn"
@@ -1587,256 +1995,24 @@ audio{
                     NEXT ▶▶
                 </button>
 
-
-            </div>
-
-
-            <!-- BEAT LIST -->
-
-            <div class="beat-list">
-
-
-                <div class="beat-list-title">
-
-                    // BEAT ARCHIVE — 07 FILES
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat0"
-                    onclick="selectBeat(0)"
-                >
-
-                    <span>
-                        01 // beat01.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat1"
-                    onclick="selectBeat(1)"
-                >
-
-                    <span>
-                        02 // beat02.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat2"
-                    onclick="selectBeat(2)"
-                >
-
-                    <span>
-                        03 // beat03.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat3"
-                    onclick="selectBeat(3)"
-                >
-
-                    <span>
-                        04 // beat04.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat4"
-                    onclick="selectBeat(4)"
-                >
-
-                    <span>
-                        05 // beat05.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat5"
-                    onclick="selectBeat(5)"
-                >
-
-                    <span>
-                        06 // beat06.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="beat"
-                    id="beat6"
-                    onclick="selectBeat(6)"
-                >
-
-                    <span>
-                        07 // beat07.mp3
-                    </span>
-
-                    <span>
-                        ▶
-                    </span>
-
-                </div>
-
-
             </div>
 
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-<!-- =========================================
-     BLOG
-========================================= -->
-
-<section
-    class="window"
-    id="news"
->
-
-
-    <div class="titlebar">
-
-        <span>
-            ★ BLOG.TXT — RECENT SHI
-        </span>
-
-
-        <div class="title-buttons">
-
-            <span>−</span>
-            <span>□</span>
-            <span>×</span>
-
-        </div>
-
-    </div>
-
-
-    <div class="window-content">
-
-
-        <div class="intro">
-
-
-            <div class="news">
-
-                <div class="news-date">
-                    08.20.10
-                </div>
-
-                <h3>
-                    NEW BEATS UP
-                </h3>
-
-                <p>
-                    made some old sounding shi today lol.
-                </p>
-
-            </div>
-
-
-            <div class="news">
-
-                <div class="news-date">
-                    08.14.10
-                </div>
-
-                <h3>
-                    MORE SHI OTW
-                </h3>
-
-                <p>
-                    more beats coming soon.
-                </p>
-
-            </div>
-
-
-            <div class="news">
-
-                <div class="news-date">
-                    08.01.10
-                </div>
-
-                <h3>
-                    WELCOME 2 MY PAGE
-                </h3>
-
-                <p>
-                    u found the old internet.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-<!-- =========================================
-     BIO
-========================================= -->
+<!-- ==============================
+     ABOUT
+============================== -->
 
 <section
     class="window"
     id="about"
 >
-
 
     <div class="titlebar">
 
@@ -1844,13 +2020,10 @@ audio{
             ℹ️ BIO.TXT — NOTEPAD
         </span>
 
-
         <div class="title-buttons">
-
             <span>−</span>
             <span>□</span>
             <span>×</span>
-
         </div>
 
     </div>
@@ -1862,7 +2035,7 @@ audio{
         <div class="intro">
 
             <h2>
-                ABOUT
+                ABOUT SHENZHEN
             </h2>
 
             <p>
@@ -1874,31 +2047,28 @@ audio{
             </p>
 
             <p>
-                old internet. old sounds. new shi.
+                producer / beatmaker / old internet enjoyer.
             </p>
 
             <p>
-                beats / production / random shi.
+                tap in if u hear sumn u fw.
             </p>
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-<!-- =========================================
+<!-- ==============================
      SOCIALS
-========================================= -->
+============================== -->
 
 <section
     class="window"
     id="socials"
 >
-
 
     <div class="titlebar">
 
@@ -1906,13 +2076,10 @@ audio{
             🔗 SOCIALS — HIT ME UP
         </span>
 
-
         <div class="title-buttons">
-
             <span>−</span>
             <span>□</span>
             <span>×</span>
-
         </div>
 
     </div>
@@ -1921,13 +2088,11 @@ audio{
     <div class="window-content">
 
 
-        <div class="social-box">
-
+        <div class="intro">
 
             <h2>
                 FIND ME ONLINE
             </h2>
-
 
             <p>
                 follow / listen / tap in ↓
@@ -1935,7 +2100,6 @@ audio{
 
 
             <div class="socials">
-
 
                 <a
                     class="social"
@@ -1946,7 +2110,6 @@ audio{
                     TIKTOK // @ynw_shenzhen
                 </a>
 
-
                 <a
                     class="social"
                     href="https://www.instagram.com/yopcshane"
@@ -1955,7 +2118,6 @@ audio{
                 >
                     IG // @yopcshane
                 </a>
-
 
                 <a
                     class="social"
@@ -1966,7 +2128,6 @@ audio{
                     YOUTUBE // @ynwshenzhen
                 </a>
 
-
                 <a
                     class="social"
                     href="https://soundcloud.com/shenzhen_made_this"
@@ -1976,22 +2137,18 @@ audio{
                     SOUNDCLOUD // shenzhen_made_this
                 </a>
 
-
             </div>
-
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-<!-- =========================================
+<!-- ==============================
      STATUS
-========================================= -->
+============================== -->
 
 <div class="statusbar">
 
@@ -2006,14 +2163,10 @@ audio{
 </div>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
-
 <footer class="footer">
 
     <strong>
-        2010 SHI
+        SHENZHEN // 2010 SHI
     </strong>
 
     <br><br>
@@ -2022,7 +2175,7 @@ audio{
 
     <br><br>
 
-    best viewed on a computer // old internet forever
+    © 2010 SHENZHEN PRODUCTIONS
 
 </footer>
 
@@ -2030,19 +2183,13 @@ audio{
 </div>
 
 
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
 <script>
 
-
-/* =========================================
-   BEATS
-========================================= */
+/* ==============================
+   MAIN PLAYER
+============================== */
 
 const beats = [
-
     "beat01.mp3",
     "beat02.mp3",
     "beat03.mp3",
@@ -2050,143 +2197,82 @@ const beats = [
     "beat05.mp3",
     "beat06.mp3",
     "beat07.mp3"
-
 ];
-
 
 let currentBeat = 0;
 
-
-/* =========================================
-   ELEMENTS
-========================================= */
-
 const audio =
-    document.getElementById(
-        "audioPlayer"
-    );
+    document.getElementById("audioPlayer");
 
 const title =
-    document.getElementById(
-        "trackTitle"
-    );
+    document.getElementById("trackTitle");
 
 const number =
-    document.getElementById(
-        "trackNumber"
-    );
+    document.getElementById("trackNumber");
 
 const status =
-    document.getElementById(
-        "status"
-    );
+    document.getElementById("status");
 
 const progress =
-    document.getElementById(
-        "progress"
-    );
+    document.getElementById("progress");
 
 
-/* =========================================
-   LOAD BEAT
-========================================= */
-
-function loadBeat(){
-
-    const file =
-        beats[currentBeat];
-
+function loadBeat() {
 
     audio.pause();
 
-
-    /*
-       IMPORTANT:
-       beats are inside:
-
-       assets/beat/
-
-    */
-
     audio.src =
-        "assets/beat/" + file;
-
+        "assets/beat/" +
+        beats[currentBeat];
 
     audio.load();
 
-
     title.textContent =
         "BEAT " +
-        String(
-            currentBeat + 1
-        ).padStart(2,"0");
-
+        String(currentBeat + 1)
+            .padStart(2,"0");
 
     number.textContent =
-        String(
-            currentBeat + 1
-        ).padStart(2,"0")
-        +
-        " / 07";
-
+        String(currentBeat + 1)
+            .padStart(2,"0")
+        + " / 07";
 
     status.textContent =
         "■ READY";
 
-
-    updateBeatList();
-
+    progress.style.width =
+        "0%";
 }
 
 
-/* =========================================
-   PLAY
-========================================= */
-
-function playBeat(){
+function playBeat() {
 
     audio.play()
-        .then(function(){
+        .then(() => {
 
             status.textContent =
                 "▶ PLAYING";
 
         })
-        .catch(function(error){
+        .catch(() => {
 
             status.textContent =
                 "⚠ MP3 NOT FOUND";
 
-            console.log(
-                "Could not play:",
-                audio.src,
-                error
-            );
-
         });
-
 }
 
 
-/* =========================================
-   PAUSE
-========================================= */
-
-function pauseBeat(){
+function pauseBeat() {
 
     audio.pause();
 
     status.textContent =
         "Ⅱ PAUSED";
-
 }
 
 
-/* =========================================
-   STOP
-========================================= */
-
-function stopBeat(){
+function stopBeat() {
 
     audio.pause();
 
@@ -2197,140 +2283,72 @@ function stopBeat(){
 
     status.textContent =
         "■ STOPPED";
-
 }
 
 
-/* =========================================
-   NEXT
-========================================= */
-
-function nextBeat(){
+function nextBeat() {
 
     currentBeat++;
 
-    if(
-        currentBeat >=
-        beats.length
-    ){
-
+    if (
+        currentBeat >= beats.length
+    ) {
         currentBeat = 0;
-
     }
 
-
     loadBeat();
-
-
     playBeat();
-
 }
 
 
-/* =========================================
-   PREVIOUS
-========================================= */
-
-function previousBeat(){
+function previousBeat() {
 
     currentBeat--;
 
-    if(currentBeat < 0){
-
+    if (currentBeat < 0) {
         currentBeat =
             beats.length - 1;
-
     }
 
-
     loadBeat();
-
-
     playBeat();
-
 }
 
-
-/* =========================================
-   SELECT BEAT
-========================================= */
-
-function selectBeat(index){
-
-    currentBeat =
-        index;
-
-
-    loadBeat();
-
-
-    playBeat();
-
-}
-
-
-/* =========================================
-   BEAT LIST
-========================================= */
-
-function updateBeatList(){
-
-    for(
-        let i = 0;
-        i < beats.length;
-        i++
-    ){
-
-        const element =
-            document.getElementById(
-                "beat" + i
-            );
-
-
-        if(
-            i === currentBeat
-        ){
-
-            element.classList.add(
-                "active"
-            );
-
-        }
-
-        else{
-
-            element.classList.remove(
-                "active"
-            );
-
-        }
-
-    }
-
-}
-
-
-/* =========================================
-   WHEN SONG ENDS
-========================================= */
 
 audio.addEventListener(
     "ended",
-    function(){
-
+    function() {
         nextBeat();
+    }
+);
+
+
+audio.addEventListener(
+    "timeupdate",
+    function() {
+
+        if (
+            audio.duration &&
+            !isNaN(audio.duration)
+        ) {
+
+            const percent =
+                (
+                    audio.currentTime /
+                    audio.duration
+                ) * 100;
+
+            progress.style.width =
+                percent + "%";
+        }
 
     }
 );
 
 
-/* =========================================
-   PLAY EVENT
-========================================= */
-
 audio.addEventListener(
     "play",
-    function(){
+    function() {
 
         status.textContent =
             "▶ PLAYING";
@@ -2339,18 +2357,14 @@ audio.addEventListener(
 );
 
 
-/* =========================================
-   PAUSE EVENT
-========================================= */
-
 audio.addEventListener(
     "pause",
-    function(){
+    function() {
 
-        if(
+        if (
             audio.currentTime > 0 &&
             !audio.ended
-        ){
+        ) {
 
             status.textContent =
                 "Ⅱ PAUSED";
@@ -2361,48 +2375,15 @@ audio.addEventListener(
 );
 
 
-/* =========================================
-   PROGRESS
-========================================= */
-
-audio.addEventListener(
-    "timeupdate",
-    function(){
-
-        if(
-            audio.duration &&
-            !isNaN(audio.duration)
-        ){
-
-            const percent =
-                (
-                    audio.currentTime /
-                    audio.duration
-                ) * 100;
-
-
-            progress.style.width =
-                percent + "%";
-
-        }
-
-    }
-);
-
-
-/* =========================================
-   ERROR
-========================================= */
-
 audio.addEventListener(
     "error",
-    function(){
+    function() {
 
         status.textContent =
             "⚠ MP3 NOT FOUND";
 
         console.log(
-            "Audio file missing:",
+            "Missing:",
             audio.src
         );
 
@@ -2410,16 +2391,9 @@ audio.addEventListener(
 );
 
 
-/* =========================================
-   INITIALIZE
-========================================= */
-
 loadBeat();
-
 
 </script>
 
-
 </body>
-
 </html>
